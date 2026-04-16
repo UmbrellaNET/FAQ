@@ -55,7 +55,7 @@ app = Flask(__name__)
 
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["https://iamf-a-e.github.io"]
+        "origins": ["https://UmbrellaNET.github.io"]
     }
 })
 
