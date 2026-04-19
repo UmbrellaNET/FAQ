@@ -7,6 +7,7 @@ import logging
 import hashlib
 from datetime import datetime
 import requests as http_requests
+from urllib.parse import quote
 
 # ===============================
 # CONFIGURATION
@@ -106,27 +107,82 @@ def build_redis_key(ip: str, session_id: str) -> str:
     The IP is hashed so raw addresses are never stored in Redis keys.
     """
     ip_hash = hashlib.sha256(ip.encode()).hexdigest()[:16]
-    return f"umbrellanet:chat:{ip_hash}:{session_id}"
+    # Use underscores — colons in URL-path endpoints caused silent failures
+    return f"umbrellanet_chat_{ip_hash}_{session_id}"
 
 
 # ===============================
 # REDIS HELPERS  (Upstash REST API)
 # ===============================
 
-def redis_del(key: str) -> bool:
-    """Delete a key from Redis using the direct REST endpoint."""
+def _run_pipeline(commands: list) -> list | None:
+    """
+    Execute a list of Redis commands atomically via Upstash pipeline.
+    Keys and values are passed as JSON array elements — no URL encoding needed.
+
+    Returns the list of per-command results, or None on failure.
+    """
     try:
-        resp = http_requests.delete(
-            f"{UPSTASH_REDIS_REST_URL}/del/{key}",
+        resp = http_requests.post(
+            f"{UPSTASH_REDIS_REST_URL}/pipeline",
             headers=REDIS_HEADERS,
+            json=commands,
             timeout=5,
         )
         resp.raise_for_status()
-        logging.debug(f"Redis DEL response for '{key}': {resp.json()}")
-        return True
+        results = resp.json()
+        logging.info(f"Pipeline results: {results}")
+
+        # Surface any per-command errors
+        for r in results:
+            if isinstance(r, dict) and "error" in r:
+                logging.error(f"Pipeline command error: {r['error']}")
+                return None
+
+        return results
     except Exception as exc:
-        logging.error(f"Redis DEL error for key '{key}': {exc}")
-        return False
+        logging.error(f"Pipeline error: {exc}")
+        return None
+
+
+def redis_rpush(key: str, *items) -> bool:
+    """
+    Append items to a Redis list and reset TTL — all via pipeline so
+    the key is always a JSON value, never a URL segment (no colon issues).
+    """
+    commands = [["RPUSH", key] + [json.dumps(item) for item in items],
+                ["EXPIRE", key, CONVERSATION_TTL_SECONDS]]
+    result = _run_pipeline(commands)
+    return result is not None
+
+
+def redis_lrange(key: str) -> list:
+    """
+    Fetch all items from a Redis list via pipeline.
+    Returns an empty list if the key doesn't exist or on error.
+    """
+    result = _run_pipeline([["LRANGE", key, 0, -1]])
+    if result is None:
+        return []
+
+    raw_list = result[0].get("result", [])
+    if not isinstance(raw_list, list):
+        logging.warning(f"LRANGE unexpected type: {type(raw_list)} — {raw_list}")
+        return []
+
+    turns = []
+    for item in raw_list:
+        try:
+            turns.append(json.loads(item))
+        except (json.JSONDecodeError, TypeError) as e:
+            logging.warning(f"Skipping undecodable item: {item!r} ({e})")
+    return turns
+
+
+def redis_del(key: str) -> bool:
+    """Delete a key via pipeline."""
+    result = _run_pipeline([["DEL", key]])
+    return result is not None
 
 
 # ===============================
@@ -134,110 +190,20 @@ def redis_del(key: str) -> bool:
 # ===============================
 
 # In-memory cache of live chat sessions keyed by redis_key.
-# This avoids re-serialising / re-creating the Gemini chat object on every
-# request within the same process lifetime.
 _session_cache: dict = {}
 
 
 def _turns_to_gemini(turns: list) -> list:
     """
-    Convert our Redis-stored turns (plain dicts with role/text)
-    into the Gemini SDK history format.
-    The system-prompt bootstrap turns are prepended in memory here
-    and are never stored in Redis.
+    Convert Redis-stored turns into Gemini SDK history format.
+    System prompt is prepended in memory — never stored in Redis.
     """
-    # System prompt bootstrap — in memory only, never persisted
     bootstrap = [
         {"role": "user",  "parts": [SYSTEM_PROMPT]},
         {"role": "model", "parts": ["Understood. I will follow these instructions."]},
     ]
-    real_turns = [
-        {"role": t["role"], "parts": [t["text"]]}
-        for t in turns
-    ]
+    real_turns = [{"role": t["role"], "parts": [t["text"]]} for t in turns]
     return bootstrap + real_turns
-
-
-def redis_rpush(key: str, *items) -> bool:
-    """
-    Append items to a Redis list and reset TTL.
-
-    Sends a single RPUSH with all values in one command, then EXPIRE.
-    Upstash REST supports multi-value RPUSH:
-      POST /rpush/key  body: [val1, val2, ...]
-    Then a separate EXPIRE call to reset TTL.
-    """
-    try:
-        serialised = [json.dumps(item) for item in items]
-
-        # Single RPUSH with all values — avoids multiple round-trips
-        # and type-conflict issues from separate pipeline commands
-        push_resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/rpush/{key}",
-            headers=REDIS_HEADERS,
-            json=serialised,
-            timeout=5,
-        )
-        push_resp.raise_for_status()
-        push_result = push_resp.json()
-        logging.info(f"Redis RPUSH result for '{key}': {push_result}")
-
-        if "error" in push_result:
-            logging.error(f"Redis RPUSH error in response: {push_result['error']}")
-            return False
-
-        # Reset TTL
-        expire_resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/expire/{key}/{CONVERSATION_TTL_SECONDS}",
-            headers=REDIS_HEADERS,
-            timeout=5,
-        )
-        expire_resp.raise_for_status()
-        logging.debug(f"Redis EXPIRE result for '{key}': {expire_resp.json()}")
-
-        return True
-    except Exception as exc:
-        logging.error(f"Redis RPUSH error for key '{key}': {exc}")
-        return False
-
-
-def redis_lrange(key: str) -> list:
-    """
-    Fetch all items from a Redis list using a direct GET call
-    (not pipeline) so the response structure is unambiguous:
-      {"result": ["item1", "item2", ...]}
-
-    Returns an empty list if the key doesn't exist or on error.
-    """
-    try:
-        # Use the direct command endpoint: GET /lrange/key/0/-1
-        resp = http_requests.get(
-            f"{UPSTASH_REDIS_REST_URL}/lrange/{key}/0/-1",
-            headers=REDIS_HEADERS,
-            timeout=5,
-        )
-        resp.raise_for_status()
-
-        data = resp.json()
-        logging.info(f"Redis LRANGE response for '{key}': {data}")
-
-        raw_list = data.get("result", [])
-
-        if not isinstance(raw_list, list):
-            logging.warning(f"Redis LRANGE unexpected result type: {type(raw_list)} — {raw_list}")
-            return []
-
-        turns = []
-        for item in raw_list:
-            try:
-                turns.append(json.loads(item))
-            except (json.JSONDecodeError, TypeError) as parse_err:
-                logging.warning(f"Skipping undecodable Redis list item: {item!r} ({parse_err})")
-
-        return turns
-    except Exception as exc:
-        logging.error(f"Redis LRANGE error for key '{key}': {exc}")
-        return []
 
 
 def get_conversation(redis_key: str):
@@ -305,7 +271,7 @@ def chat():
         client_ip = get_client_ip()
         redis_key = build_redis_key(client_ip, session_id)
 
-        logging.info(f"Chat request | ip_hash={redis_key.split(':')[2]} | session={session_id}")
+        logging.info(f"Chat request | key={redis_key} | session={session_id}")
 
         convo    = get_conversation(redis_key)
         response = convo.send_message(message)
