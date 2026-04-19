@@ -22,10 +22,10 @@ if not GEN_API_KEY:
 
 # ── Upstash Redis credentials ──────────────────────────────────
 UPSTASH_REDIS_REST_URL   = os.environ.get(
-    "UPSTASH_REDIS_REST_URL",
+    "UPSTASH_REDIS_REST_URL"
 )
 UPSTASH_REDIS_REST_TOKEN = os.environ.get(
-    "UPSTASH_REDIS_REST_TOKEN",
+    "UPSTASH_REDIS_REST_TOKEN"
 )
 
 REDIS_HEADERS = {
@@ -133,14 +133,22 @@ def redis_get(key: str):
 
 def redis_set(key: str, value, ttl: int = CONVERSATION_TTL_SECONDS) -> bool:
     """
-    Store a JSON-encoded value in Redis with an expiry (EX = seconds).
-    Uses the Upstash pipeline-friendly SET key value EX ttl command.
+    Store a JSON-encoded value in Redis with an expiry.
+
+    Upstash REST API format:
+        POST /set/<key>/<value>?EX=<seconds>
+    The value must be URL-encoded as a path segment — we use the
+    pipeline (array) endpoint instead to avoid encoding headaches
+    with complex JSON payloads:
+        POST /pipeline  body: [["SET", key, value, "EX", ttl]]
     """
     try:
+        serialised = json.dumps(value)
+        pipeline   = [["SET", key, serialised, "EX", ttl]]
         resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/set/{key}",
+            f"{UPSTASH_REDIS_REST_URL}/pipeline",
             headers=REDIS_HEADERS,
-            json={"value": json.dumps(value), "ex": ttl},
+            json=pipeline,
             timeout=5,
         )
         resp.raise_for_status()
@@ -151,11 +159,13 @@ def redis_set(key: str, value, ttl: int = CONVERSATION_TTL_SECONDS) -> bool:
 
 
 def redis_del(key: str) -> bool:
-    """Delete a key from Redis."""
+    """Delete a key from Redis using the pipeline endpoint."""
     try:
-        resp = http_requests.delete(
-            f"{UPSTASH_REDIS_REST_URL}/del/{key}",
+        pipeline = [["DEL", key]]
+        resp = http_requests.post(
+            f"{UPSTASH_REDIS_REST_URL}/pipeline",
             headers=REDIS_HEADERS,
+            json=pipeline,
             timeout=5,
         )
         resp.raise_for_status()
@@ -221,8 +231,24 @@ def persist_turn(redis_key: str, user_text: str, model_text: str):
     """
     Append the latest user + model turn to the Redis history and
     reset the TTL so active conversations don't expire mid-session.
+
+    Guards against a corrupt/unexpected Redis value by always ensuring
+    `history` is a list before appending.
     """
-    history = redis_get(redis_key) or []
+    raw = redis_get(redis_key)
+
+    # Defensive: if Redis returned something that isn't a list (e.g. a dict
+    # from a previous broken write), start fresh rather than crashing.
+    if isinstance(raw, list):
+        history = raw
+    else:
+        if raw is not None:
+            logging.warning(
+                f"Unexpected Redis value type for key '{redis_key}': "
+                f"{type(raw).__name__}. Resetting history."
+            )
+        history = []
+
     history.append({"role": "user",  "text": user_text})
     history.append({"role": "model", "text": model_text})
     redis_set(redis_key, history, ttl=CONVERSATION_TTL_SECONDS)
