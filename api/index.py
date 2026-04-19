@@ -113,62 +113,16 @@ def build_redis_key(ip: str, session_id: str) -> str:
 # REDIS HELPERS  (Upstash REST API)
 # ===============================
 
-def redis_get(key: str):
-    """Fetch a JSON-encoded value from Redis. Returns None if not found."""
-    try:
-        resp = http_requests.get(
-            f"{UPSTASH_REDIS_REST_URL}/get/{key}",
-            headers=REDIS_HEADERS,
-            timeout=5,
-        )
-        resp.raise_for_status()
-        result = resp.json().get("result")
-        if result is None:
-            return None
-        return json.loads(result)
-    except Exception as exc:
-        logging.error(f"Redis GET error for key '{key}': {exc}")
-        return None
-
-
-def redis_set(key: str, value, ttl: int = CONVERSATION_TTL_SECONDS) -> bool:
-    """
-    Store a JSON-encoded value in Redis with an expiry.
-
-    Upstash REST API format:
-        POST /set/<key>/<value>?EX=<seconds>
-    The value must be URL-encoded as a path segment — we use the
-    pipeline (array) endpoint instead to avoid encoding headaches
-    with complex JSON payloads:
-        POST /pipeline  body: [["SET", key, value, "EX", ttl]]
-    """
-    try:
-        serialised = json.dumps(value)
-        pipeline   = [["SET", key, serialised, "EX", ttl]]
-        resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/pipeline",
-            headers=REDIS_HEADERS,
-            json=pipeline,
-            timeout=5,
-        )
-        resp.raise_for_status()
-        return True
-    except Exception as exc:
-        logging.error(f"Redis SET error for key '{key}': {exc}")
-        return False
-
-
 def redis_del(key: str) -> bool:
-    """Delete a key from Redis using the pipeline endpoint."""
+    """Delete a key from Redis using the direct REST endpoint."""
     try:
-        pipeline = [["DEL", key]]
-        resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/pipeline",
+        resp = http_requests.delete(
+            f"{UPSTASH_REDIS_REST_URL}/del/{key}",
             headers=REDIS_HEADERS,
-            json=pipeline,
             timeout=5,
         )
         resp.raise_for_status()
+        logging.debug(f"Redis DEL response for '{key}': {resp.json()}")
         return True
     except Exception as exc:
         logging.error(f"Redis DEL error for key '{key}': {exc}")
@@ -206,22 +160,41 @@ def _turns_to_gemini(turns: list) -> list:
 
 def redis_rpush(key: str, *items) -> bool:
     """
-    Atomically append one or more JSON-encoded items to a Redis list
-    and reset its TTL. Uses the pipeline endpoint so it's a single
-    round-trip.
+    Append items to a Redis list and reset TTL.
+
+    Sends a single RPUSH with all values in one command, then EXPIRE.
+    Upstash REST supports multi-value RPUSH:
+      POST /rpush/key  body: [val1, val2, ...]
+    Then a separate EXPIRE call to reset TTL.
     """
     try:
-        pipeline = []
-        for item in items:
-            pipeline.append(["RPUSH", key, json.dumps(item)])
-        pipeline.append(["EXPIRE", key, CONVERSATION_TTL_SECONDS])
-        resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/pipeline",
+        serialised = [json.dumps(item) for item in items]
+
+        # Single RPUSH with all values — avoids multiple round-trips
+        # and type-conflict issues from separate pipeline commands
+        push_resp = http_requests.post(
+            f"{UPSTASH_REDIS_REST_URL}/rpush/{key}",
             headers=REDIS_HEADERS,
-            json=pipeline,
+            json=serialised,
             timeout=5,
         )
-        resp.raise_for_status()
+        push_resp.raise_for_status()
+        push_result = push_resp.json()
+        logging.info(f"Redis RPUSH result for '{key}': {push_result}")
+
+        if "error" in push_result:
+            logging.error(f"Redis RPUSH error in response: {push_result['error']}")
+            return False
+
+        # Reset TTL
+        expire_resp = http_requests.post(
+            f"{UPSTASH_REDIS_REST_URL}/expire/{key}/{CONVERSATION_TTL_SECONDS}",
+            headers=REDIS_HEADERS,
+            timeout=5,
+        )
+        expire_resp.raise_for_status()
+        logging.debug(f"Redis EXPIRE result for '{key}': {expire_resp.json()}")
+
         return True
     except Exception as exc:
         logging.error(f"Redis RPUSH error for key '{key}': {exc}")
@@ -230,20 +203,38 @@ def redis_rpush(key: str, *items) -> bool:
 
 def redis_lrange(key: str) -> list:
     """
-    Fetch all items from a Redis list. Returns an empty list if the key
-    doesn't exist or on error.
+    Fetch all items from a Redis list using a direct GET call
+    (not pipeline) so the response structure is unambiguous:
+      {"result": ["item1", "item2", ...]}
+
+    Returns an empty list if the key doesn't exist or on error.
     """
     try:
-        pipeline = [["LRANGE", key, 0, -1]]
-        resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/pipeline",
+        # Use the direct command endpoint: GET /lrange/key/0/-1
+        resp = http_requests.get(
+            f"{UPSTASH_REDIS_REST_URL}/lrange/{key}/0/-1",
             headers=REDIS_HEADERS,
-            json=pipeline,
             timeout=5,
         )
         resp.raise_for_status()
-        raw_list = resp.json()[0].get("result", [])
-        return [json.loads(item) for item in raw_list]
+
+        data = resp.json()
+        logging.info(f"Redis LRANGE response for '{key}': {data}")
+
+        raw_list = data.get("result", [])
+
+        if not isinstance(raw_list, list):
+            logging.warning(f"Redis LRANGE unexpected result type: {type(raw_list)} — {raw_list}")
+            return []
+
+        turns = []
+        for item in raw_list:
+            try:
+                turns.append(json.loads(item))
+            except (json.JSONDecodeError, TypeError) as parse_err:
+                logging.warning(f"Skipping undecodable Redis list item: {item!r} ({parse_err})")
+
+        return turns
     except Exception as exc:
         logging.error(f"Redis LRANGE error for key '{key}': {exc}")
         return []
