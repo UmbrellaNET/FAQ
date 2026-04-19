@@ -185,12 +185,68 @@ def redis_del(key: str) -> bool:
 _session_cache: dict = {}
 
 
-def _history_to_gemini(history: list) -> list:
-    """Convert our serialisable history format to the SDK's expected structure."""
-    return [
-        {"role": turn["role"], "parts": [turn["text"]]}
-        for turn in history
+def _turns_to_gemini(turns: list) -> list:
+    """
+    Convert our Redis-stored turns (plain dicts with role/text)
+    into the Gemini SDK history format.
+    The system-prompt bootstrap turns are prepended in memory here
+    and are never stored in Redis.
+    """
+    # System prompt bootstrap — in memory only, never persisted
+    bootstrap = [
+        {"role": "user",  "parts": [SYSTEM_PROMPT]},
+        {"role": "model", "parts": ["Understood. I will follow these instructions."]},
     ]
+    real_turns = [
+        {"role": t["role"], "parts": [t["text"]]}
+        for t in turns
+    ]
+    return bootstrap + real_turns
+
+
+def redis_rpush(key: str, *items) -> bool:
+    """
+    Atomically append one or more JSON-encoded items to a Redis list
+    and reset its TTL. Uses the pipeline endpoint so it's a single
+    round-trip.
+    """
+    try:
+        pipeline = []
+        for item in items:
+            pipeline.append(["RPUSH", key, json.dumps(item)])
+        pipeline.append(["EXPIRE", key, CONVERSATION_TTL_SECONDS])
+        resp = http_requests.post(
+            f"{UPSTASH_REDIS_REST_URL}/pipeline",
+            headers=REDIS_HEADERS,
+            json=pipeline,
+            timeout=5,
+        )
+        resp.raise_for_status()
+        return True
+    except Exception as exc:
+        logging.error(f"Redis RPUSH error for key '{key}': {exc}")
+        return False
+
+
+def redis_lrange(key: str) -> list:
+    """
+    Fetch all items from a Redis list. Returns an empty list if the key
+    doesn't exist or on error.
+    """
+    try:
+        pipeline = [["LRANGE", key, 0, -1]]
+        resp = http_requests.post(
+            f"{UPSTASH_REDIS_REST_URL}/pipeline",
+            headers=REDIS_HEADERS,
+            json=pipeline,
+            timeout=5,
+        )
+        resp.raise_for_status()
+        raw_list = resp.json()[0].get("result", [])
+        return [json.loads(item) for item in raw_list]
+    except Exception as exc:
+        logging.error(f"Redis LRANGE error for key '{key}': {exc}")
+        return []
 
 
 def get_conversation(redis_key: str):
@@ -199,28 +255,18 @@ def get_conversation(redis_key: str):
 
     Strategy:
       1. Check the in-process cache (fast path — same Gunicorn worker).
-      2. Load history from Redis and reconstruct the session (cross-worker / restart safe).
-      3. Brand-new session — inject the system prompt as the first user turn.
+      2. Load ONLY real conversation turns from Redis (no system prompt).
+      3. Prepend the system prompt bootstrap in memory before handing to SDK.
     """
     # 1. In-process cache
     if redis_key in _session_cache:
         return _session_cache[redis_key]
 
-    # 2. Restore from Redis
-    stored_history = redis_get(redis_key)
+    # 2. Load real turns from Redis (empty list = brand-new user)
+    stored_turns = redis_lrange(redis_key)
 
-    if stored_history:
-        gemini_history = _history_to_gemini(stored_history)
-    else:
-        # 3. New session — prime with system prompt
-        stored_history = [
-            {"role": "user",  "text": SYSTEM_PROMPT},
-            # Gemini SDK requires the history to alternate user/model.
-            # Provide a minimal model acknowledgement so the SDK is happy.
-            {"role": "model", "text": "Understood. I will follow these instructions."},
-        ]
-        gemini_history = _history_to_gemini(stored_history)
-        redis_set(redis_key, stored_history)
+    # 3. Build Gemini history: system prompt in memory + real turns from Redis
+    gemini_history = _turns_to_gemini(stored_turns)
 
     chat = model.start_chat(history=gemini_history)
     _session_cache[redis_key] = chat
@@ -229,29 +275,15 @@ def get_conversation(redis_key: str):
 
 def persist_turn(redis_key: str, user_text: str, model_text: str):
     """
-    Append the latest user + model turn to the Redis history and
-    reset the TTL so active conversations don't expire mid-session.
-
-    Guards against a corrupt/unexpected Redis value by always ensuring
-    `history` is a list before appending.
+    Atomically append exactly one user turn and one model turn to the
+    Redis list for this session. No read-modify-write — just RPUSH.
+    The system prompt is never written here.
     """
-    raw = redis_get(redis_key)
-
-    # Defensive: if Redis returned something that isn't a list (e.g. a dict
-    # from a previous broken write), start fresh rather than crashing.
-    if isinstance(raw, list):
-        history = raw
-    else:
-        if raw is not None:
-            logging.warning(
-                f"Unexpected Redis value type for key '{redis_key}': "
-                f"{type(raw).__name__}. Resetting history."
-            )
-        history = []
-
-    history.append({"role": "user",  "text": user_text})
-    history.append({"role": "model", "text": model_text})
-    redis_set(redis_key, history, ttl=CONVERSATION_TTL_SECONDS)
+    redis_rpush(
+        redis_key,
+        {"role": "user",  "text": user_text},
+        {"role": "model", "text": model_text},
+    )
 
 
 # ===============================
