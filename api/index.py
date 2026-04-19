@@ -238,8 +238,8 @@ def persist_turn(redis_key: str, user_text: str, model_text: str):
     """
     redis_rpush(
         redis_key,
-        {"role": "user",  "text": user_text},
-        {"role": "model", "text": model_text},
+        {"role": "user",  "text": user_text,  "timestamp": now},
+        {"role": "model", "text": model_text, "timestamp": now},
     )
 
 
