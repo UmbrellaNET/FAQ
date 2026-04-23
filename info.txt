@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<!--yhWDnFf5cdxAH_vRfaM8L-->
+<html lang="en" class="js">
+    <head>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="preload" as="image" href="/umbrella-logo.png"/>
+        <link rel="preload" as="image" href="/un-logo-horizontal.webp"/>
+        <link rel="stylesheet" href="/_next/static/css/a60279dcb9576183.css" data-precedence="next"/>
+        <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-d282787ed3063711.js"/>
+        <script src="/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js" async=""></script>
+        <script src="/_next/static/chunks/1255-8befde0980f5cba9.js" async=""></script>
+        <script src="/_next/static/chunks/main-app-1df40ec7166c7d3a.js" async=""></script>
+        <script src="/_next/static/chunks/8663-541166ed1e4fa846.js" async=""></script>
+        <script src="/_next/static/chunks/app/layout-a2b99551e4f9d531.js" async=""></script>
+        <script src="/_next/static/chunks/c15bf2b0-c59ed6c02f757fc5.js" async=""></script>
+        <script src="/_next/static/chunks/1904-e7d66b397e3a8dd4.js" async=""></script>
+        <script src="/_next/static/chunks/2619-04bc32f026a0d946.js" async=""></script>
+        <script src="/_next/static/chunks/9672-8c84df0168951b81.js" async=""></script>
+        <script src="/_next/static/chunks/8113-010b11de5ddfff56.js" async=""></script>
+        <script src="/_next/static/chunks/9211-020889b9ca4bc1c4.js" async=""></script>
+        <script src="/_next/static/chunks/6354-ea5e708193d78724.js" async=""></script>
+        <script src="/_next/static/chunks/app/page-ca73cedb376ebf06.js" async=""></script>
+        <link rel="preload" href="/main.js" as="script"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 64 64&#x27;%3E%3Cpath fill=&#x27;%23ffffff&#x27; d=&#x27;M32 10c-12.7 0-23 8.7-23 19.4v1.2h46v-1.2C55 18.7 44.7 10 32 10Zm-15 39.8c0 2.3 1.9 4.2 4.2 4.2h.4c2.3 0 4.2-1.9 4.2-4.2V34.6H17v15.2Zm21 0c0 2.3 1.9 4.2 4.2 4.2h.4c2.3 0 4.2-1.9 4.2-4.2V34.6H38v15.2Z&#x27;/%3E%3C/svg%3E"/>
+        <title>Enterprise and SMB AI Automation Services</title>
+        <meta name="description" content="Scale faster with enterprise and SMB AI automation services from UmbrellaLabs. Improve conversion efficiency, cut bottlenecks, and deliver measurable ROI."/>
+        <meta name="keywords" content="AI automation services,enterprise AI automation services,SMB AI automation services,climate-positive AI,enterprise AI consulting,SMB automation consulting"/>
+        <meta name="robots" content="index, follow"/>
+        <link rel="canonical" href="https://umbrellalabs.com"/>
+        <meta property="og:title" content="Enterprise and SMB AI Automation Services"/>
+        <meta property="og:description" content="Scale faster with enterprise and SMB AI automation services from UmbrellaLabs. Improve conversion efficiency, cut bottlenecks, and deliver measurable ROI."/>
+        <meta property="og:url" content="https://umbrellalabs.com"/>
+        <meta property="og:site_name" content="UmbrellaLabs"/>
+        <meta property="og:image" content="https://umbrellalabs.com/og-default.svg"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:image:alt" content="UmbrellaLabs preview image"/>
+        <meta property="og:type" content="website"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Enterprise and SMB AI Automation Services"/>
+        <meta name="twitter:description" content="Scale faster with enterprise and SMB AI automation services from UmbrellaLabs. Improve conversion efficiency, cut bottlenecks, and deliver measurable ROI."/>
+        <meta name="twitter:image" content="https://umbrellalabs.com/og-default.svg"/>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+        <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
+    </head>
+    <body>
+        <div hidden="">
+        <!--$-->
+        <!--/$-->
+        </div>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "UmbrellaLabs",
+                "url": "https://umbrellalabs.com",
+                "email": "info@umbrellalabs.com",
+                "description": "UmbrellaLabs helps organizations implement climate-positive AI automation with measurable ROI."
+            }</script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "UmbrellaLabs",
+                "url": "https://umbrellalabs.com",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://umbrellalabs.com/links",
+                    "query-input": "required name=search_term_string"
+                }
+            }</script>
+        <div data-overlay-container="true">
+            <header class="site-header" id="top">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a class="brand brand--mdx" href="/" aria-label="UmbrellaLabs home">
+                            <img src="/umbrella-logo.png" alt="UmbrellaLabs" class="brand-logo brand-logo--header" style="display:block;height:auto;width:auto;max-height:80px;max-width:400px;object-fit:contain"/>
+                        </a>
+                    </div>
+                    <nav class="nav nav--center" aria-label="Primary">
+                        <a class="nav-link is-active" href="/" aria-current="page">Home</a>
+                        <a class="nav-link " href="/services">Services</a>
+                        <a class="nav-link " href="/solutions">Solutions</a>
+                        <a class="nav-link " href="/academy">Academy</a>
+                    </nav>
+                    <div class="header-right">
+                        <a class="header-talk" href="/contact" aria-label="Go to contact page">
+                            <span>Let &#x27;s talk</span>
+                            <span aria-hidden="true">â†—</span>
+                        </a>
+                        <span class="header-sep" aria-hidden="true"></span>
+                        <button class="burger" type="button" aria-label="Open navigation" aria-controls="menu-modal" aria-expanded="false" data-open-menu="true">
+                            <span class="burger__line" aria-hidden="true"></span>
+                            <span class="burger__line" aria-hidden="true"></span>
+                            <span class="burger__line" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <dialog class="modal" id="contact-modal" aria-label="Contact UmbrellaLabs">
+                <div class="modal__inner modal__inner--contact">
+                    <button class="modal__close" type="button" data-close-modal="true" aria-label="Close">
+                        <span aria-hidden="true">Ã—</span>
+                        <span class="modal__close-text">Close</span>
+                    </button>
+                    <div class="modal__content">
+                        <h3 class="modal__title">Connect with us</h3>
+                        <p class="modal__copy">Connect with our team for a complimentary consultation.</p>
+                        <a class="btn btn-primary" href="/contact">
+                            GO TO CONTACT<span class="hero-cta-arrow" aria-hidden="true">â†—</span>
+                        </a>
+                    </div>
+                </div>
+            </dialog>
+            <dialog class="modal menu-modal" id="menu-modal" aria-label="Navigation">
+                <div class="menu-modal__inner" role="document">
+                    <div class="menu-top">
+                        <div class="menu-top__left">
+                            <span class="menu-modal__wordmark">UMBRELLALABS</span>
+                        </div>
+                        <div class="menu-top__right">
+                            <a class="header-talk" href="/contact" data-close-menu-after="true" aria-label="Go to contact page">
+                                <span>Let &#x27;s talk</span>
+                                <span class="header-talk__arrow" aria-hidden="true">â†—</span>
+                            </a>
+                            <a class="header-talk header-talk--portal" href="/portal" data-menu-link="true" data-menu-key="portal" aria-label="Portal">
+                                <span>Portal</span>
+                            </a>
+                            <span class="header-sep" aria-hidden="true"></span>
+                            <button class="menu-close" type="button" data-close-menu="true" aria-label="Close menu">
+                                <span aria-hidden="true">Ã—</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-layout">
+                        <div class="menu-left order-2 lg:order-1">
+                            <div class="menu-kicker">
+                                <span class="menu-kicker__dot" aria-hidden="true"></span>
+                                <span>Connect with us</span>
+                            </div>
+                            <h2 class="menu-title">Working on something exciting? Let &#x27;s talk.</h2>
+                            <a class="btn btn-primary" href="/contact" data-close-menu-after="true" aria-label="Go to contact page">
+                                <span>LET &#x27;S TALK</span>
+                                <span aria-hidden="true">â†—</span>
+                            </a>
+                        </div>
+                        <nav class="menu-right order-1 lg:order-2" aria-label="Menu">
+                            <a class="menu-item is-active" href="/" data-menu-link="true" data-menu-key="home" aria-current="page">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>Home</span>
+                            </a>
+                            <a class="menu-item " href="/about" data-menu-link="true" data-menu-key="about">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>About Us</span>
+                            </a>
+                            <a class="menu-item " href="/services" data-menu-link="true" data-menu-key="services">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>Services</span>
+                            </a>
+                            <a class="menu-item " href="/solutions" data-menu-link="true" data-menu-key="solutions">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>Solutions</span>
+                            </a>
+                            <a class="menu-item " href="/links" data-menu-link="true" data-menu-key="links">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>Links</span>
+                            </a>
+                            <a class="menu-item " href="/academy" data-menu-link="true" data-menu-key="academy">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>Academy</span>
+                            </a>
+                            <a class="menu-item " href="/contact" data-menu-link="true" data-menu-key="contact">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>Contact Us</span>
+                            </a>
+                            <a class="menu-item lg:hidden " href="/portal" data-menu-link="true" data-menu-key="portal">
+                                <span class="menu-item__dot" aria-hidden="true"></span>
+                                <span>Portal</span>
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="menu-social" aria-label="Social links">
+                        <a class="social" href="#github" aria-label="GitHub">
+                            <svg width="18" height="18" viewBox="0 -0.5 25 25" fill="currentColor" aria-hidden="true">
+                                <path d="m12.301 0h.093c2.242 0 4.34.613 6.137 1.68l-.055-.031c1.871 1.094 3.386 2.609 4.449 4.422l.031.058c1.04 1.769 1.654 3.896 1.654 6.166 0 5.406-3.483 10-8.327 11.658l-.087.026c-.063.02-.135.031-.209.031-.162 0-.312-.054-.433-.144l.002.001c-.128-.115-.208-.281-.208-.466 0-.005 0-.01 0-.014v.001q0-.048.008-1.226t.008-2.154c.007-.075.011-.161.011-.249 0-.792-.323-1.508-.844-2.025.618-.061 1.176-.163 1.718-.305l-.076.017c.573-.16 1.073-.373 1.537-.642l-.031.017c.508-.28.938-.636 1.292-1.058l.006-.007c.372-.476.663-1.036.84-1.645l.009-.035c.209-.683.329-1.468.329-2.281 0-.045 0-.091-.001-.136v.007c0-.022.001-.047.001-.072 0-1.248-.482-2.383-1.269-3.23l.003.003c.168-.44.265-.948.265-1.479 0-.649-.145-1.263-.404-1.814l.011.026c-.115-.022-.246-.035-.381-.035-.334 0-.649.078-.929.216l.012-.005c-.568.21-1.054.448-1.512.726l.038-.022-.609.384c-.922-.264-1.981-.416-3.075-.416s-2.153.152-3.157.436l.081-.02q-.256-.176-.681-.433c-.373-.214-.814-.421-1.272-.595l-.066-.022c-.293-.154-.64-.244-1.009-.244-.124 0-.246.01-.364.03l.013-.002c-.248.524-.393 1.139-.393 1.788 0 .531.097 1.04.275 1.509l-.01-.029c-.785.844-1.266 1.979-1.266 3.227 0 .025 0 .051.001.076v-.004c-.001.039-.001.084-.001.13 0 .809.12 1.591.344 2.327l-.015-.057c.189.643.476 1.202.85 1.693l-.009-.013c.354.435.782.793 1.267 1.062l.022.011c.432.252.933.465 1.46.614l.046.011c.466.125 1.024.227 1.595.284l.046.004c-.431.428-.718 1-.784 1.638l-.001.012c-.207.101-.448.183-.699.236l-.021.004c-.256.051-.549.08-.85.08-.022 0-.044 0-.066 0h.003c-.394-.008-.756-.136-1.055-.348l.006.004c-.371-.259-.671-.595-.881-.986l-.007-.015c-.198-.336-.459-.614-.768-.827l-.009-.006c-.225-.169-.49-.301-.776-.38l-.016-.004-.32-.048c-.023-.002-.05-.003-.077-.003-.14 0-.273.028-.394.077l.007-.003q-.128.072-.08.184c.039.086.087.16.145.225l-.001-.001c.061.072.13.135.205.19l.003.2.112.08c.283.148.516.354.693.603l.004.006c.191.237.359.505.494.792l.01.024.16.368c.135.402.38.738.7.981l.005.004c.3.234.662.402 1.057.478l.016.002c.33.064.714.104 1.106.112h.007c.045.002.097.002.15.002.261 0 .517-.021.767-.062l-.027.004.368-.064q0 .609.008 1.418t.008.873v.014c0 .185-.08.351-.208.466h-.001c-.119.089-.268.143-.431.143-.075 0-.147-.011-.214-.032l.005.001c-4.929-1.689-8.409-6.283-8.409-11.69 0-2.268.612-4.393 1.681-6.219l-.032.058c1.094-1.871 2.609-3.386 4.422-4.449l.058-.031c1.739-1.034 3.835-1.645 6.073-1.645h.098-.005zm-7.64 17.666q.048-.112-.112-.192-.16-.048-.208.032-.048.112.112.192.144.096.208-.032zm.497.545q.112-.08-.032-.256-.16-.144-.256-.048-.112.08.032.256.159.157.256.047zm.48.72q.144-.112 0-.304-.128-.208-.272-.096-.144.08 0 .288t.272.112zm.672.673q.128-.128-.064-.304-.192-.192-.32-.048-.144.128.064.304.192.192.32.044zm.913.4q.048-.176-.208-.256-.24-.064-.304.112t.208.24q.24.097.304-.096zm1.009.08q0-.208-.272-.176-.256 0-.256.176 0 .208.272.176.256.001.256-.175zm.929-.16q-.032-.176-.288-.144-.256.048-.224.24t.288.128.225-.224z"></path>
+                            </svg>
+                        </a>
+                        <a class="social" href="#x" aria-label="X">X</a>
+                        <a class="social" href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </dialog>
+            <main id="main" class="jsx-71ebba0747e796c landing-page">
+                <section id="home" aria-labelledby="hero-title" class="jsx-71ebba0747e796c hero hero--light">
+                    <div class="jsx-71ebba0747e796c container hero-inner">
+                        <div class="jsx-71ebba0747e796c hero-grid">
+                            <div class="jsx-71ebba0747e796c hero-left mb-[3em]">
+                                <h1 id="hero-title" style="font-size:clamp(36px, 3.84vw, 48px)" class="jsx-71ebba0747e796c hero-title hero-title--split">
+                                    <span class="jsx-71ebba0747e796c hero-title__line hero-title__line--strong">Climateâ€‘PositiveÂ AI</span>
+                                </h1>
+                                <h2 style="font-size:clamp(36px, 3.84vw, 48px)" class="jsx-71ebba0747e796c hero-title hero-title--split">
+                                    <span class="jsx-71ebba0747e796c hero-title__line hero-title__line--muted">Automation Authority</span>
+                                </h2>
+                                <p class="jsx-71ebba0747e796c hero-lede">Transform your business with sustainable AI automation, from SMB to Enterprise. We blend cutting edge AI automation with climate positive infrastructure to create measurable business results your stakeholders can celebrate.</p>
+                            </div>
+                            <div aria-hidden="true" class="jsx-71ebba0747e796c hero-visual">
+                                <video src="/white-animation.mp4" muted="" playsInline="" preload="auto" class="jsx-71ebba0747e796c hero-sphere-video hero-sphere-video--standalone hero-sphere-video--layer"></video>
+                                <video src="/white-animation.mp4" muted="" playsInline="" preload="auto" class="jsx-71ebba0747e796c hero-sphere-video hero-sphere-video--standalone"></video>
+                            </div>
+                            <div class="jsx-71ebba0747e796c hero-right mb-[3em]">
+                                <p class="jsx-71ebba0747e796c hero-lede hero-right__lede">R &amp;D grant-backed AI solutions powered by UmbrellaNET &#x27;s climate-positive Managed Cloud, helping reduce carbon footprint by up to 85% while delivering measurable business value.</p>
+                                <div role="list" aria-label="Highlights" class="jsx-71ebba0747e796c pill-row pill-row--chips">
+                                    <span role="listitem" style="color:rgba(18,24,35,.55)" class="jsx-71ebba0747e796c pill pill--chip">Climate Positive Cloud</span>
+                                    <span role="listitem" style="color:rgba(18,24,35,.55)" class="jsx-71ebba0747e796c pill pill--chip">Up to 85% Carbon Reduction</span>
+                                    <span role="listitem" style="color:rgba(18,24,35,.55)" class="jsx-71ebba0747e796c pill pill--chip">R &amp;D Grant Funded</span>
+                                    <span role="listitem" style="color:rgba(18,24,35,.55)" class="jsx-71ebba0747e796c pill pill--chip">ROI Guaranteed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="about about--mdx motion-reveal motion-reveal--left" id="services" aria-labelledby="about-title" style="opacity:0;transform:translateY(48px) scale(0.98)">
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c decor-layer"></div>
+                    <div class="jsx-71ebba0747e796c container about-inner">
+                        <h2 id="about-title" class="jsx-71ebba0747e796c about-title gsap-fade">
+                            <span class="jsx-71ebba0747e796c">Enterprise AI Without Enterprise Costs</span>
+                        </h2>
+                        <p class="jsx-71ebba0747e796c about-copy gsap-fade mt-[2em] text-[20px]">UmbrellaLabs helps businesses adopt AI automation through a practical AIaaS model. Instead of paying only for software access, you pay for measurable business outcomes. The platform scales from SMB teams to enterprise environments while keeping delivery and cost structure clear.</p>
+                        <button type="button" class="jsx-71ebba0747e796c about-cta">
+                            <span class="jsx-71ebba0747e796c">Explore Solutions</span>
+                            <span aria-hidden="true" class="jsx-71ebba0747e796c ">â†—</span>
+                        </button>
+                        <div aria-hidden="true" class="jsx-71ebba0747e796c about-dots">
+                            <span class="jsx-71ebba0747e796c about-dots__bar"></span>
+                            <span class="jsx-71ebba0747e796c about-dots__bar"></span>
+                            <span class="jsx-71ebba0747e796c about-dots__bar"></span>
+                            <span class="jsx-71ebba0747e796c about-dots__bar"></span>
+                        </div>
+                    </div>
+                </section>
+                <section class="climate-parallax" style="position:relative;z-index:2;opacity:0">
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c climate-parallax__base-gradient"></div>
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c climate-parallax__bg"></div>
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c climate-parallax__mesh-gradient"></div>
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c climate-parallax__grid"></div>
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c climate-parallax__particles">
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--1"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--2"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--3"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--4"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--5"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--6"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--7"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--8"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--9"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--10"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--11"></div>
+                        <div class="jsx-71ebba0747e796c climate-parallax__particle climate-parallax__particle--12"></div>
+                    </div>
+                    <svg aria-hidden="true" class="jsx-71ebba0747e796c climate-parallax__network">
+                        <defs class="jsx-71ebba0747e796c">
+                            <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%" class="jsx-71ebba0747e796c">
+                                <stop offset="0%" stop-color="rgba(69,166,219,0.25)" class="jsx-71ebba0747e796c"></stop>
+                                <stop offset="50%" stop-color="rgba(38,212,179,0.20)" class="jsx-71ebba0747e796c"></stop>
+                                <stop offset="100%" stop-color="rgba(69,166,219,0.25)" class="jsx-71ebba0747e796c"></stop>
+                            </linearGradient>
+                            <filter id="glow" class="jsx-71ebba0747e796c">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur" class="jsx-71ebba0747e796c"></feGaussianBlur>
+                                <feMerge class="jsx-71ebba0747e796c">
+                                    <feMergeNode in="coloredBlur" class="jsx-71ebba0747e796c"></feMergeNode>
+                                    <feMergeNode in="SourceGraphic" class="jsx-71ebba0747e796c"></feMergeNode>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <path d="M0,200 Q250,100 500,150 T1000,120 T1500,180" stroke="url(#networkGradient)" stroke-width="1" fill="none" filter="url(#glow)" class="jsx-71ebba0747e796c climate-parallax__network-line climate-parallax__network-line--1"></path>
+                        <path d="M0,400 Q300,350 600,380 T1200,360 T1800,400" stroke="url(#networkGradient)" stroke-width="1" fill="none" filter="url(#glow)" class="jsx-71ebba0747e796c climate-parallax__network-line climate-parallax__network-line--2"></path>
+                        <path d="M0,600 Q350,550 700,580 T1400,560 T2000,600" stroke="url(#networkGradient)" stroke-width="1" fill="none" filter="url(#glow)" class="jsx-71ebba0747e796c climate-parallax__network-line climate-parallax__network-line--3"></path>
+                    </svg>
+                    <div class="jsx-71ebba0747e796c climate-parallax__content container relative z-[2] h-full flex flex-col items-center justify-center text-center min-h-[100vh] py-20">
+                        <div class="jsx-71ebba0747e796c climate-parallax__content-inner">
+                            <h2 class="jsx-71ebba0747e796c climate-parallax__title gsap-fade">
+                                <span class="jsx-71ebba0747e796c climate-parallax__title-line climate-parallax__title-line--1">Climate-Positive AIaaS</span>
+                                <span class="jsx-71ebba0747e796c climate-parallax__title-line climate-parallax__title-line--2">
+                                    <span class="jsx-71ebba0747e796c climate-parallax__powered-by">Powered by</span>
+                                    <a href="https://www.umbrellanet.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Visit UmbrellaNET website (opens in a new tab)" class="jsx-71ebba0747e796c climate-parallax__brand-link">
+                                        <img src="/un-logo-horizontal.webp" alt="UmbrellaNET" class="jsx-71ebba0747e796c climate-parallax__brand-logo"/>
+                                    </a>
+                                </span>
+                            </h2>
+                            <div class="jsx-71ebba0747e796c climate-parallax__card gsap-fade">
+                                <p class="jsx-71ebba0747e796c climate-parallax__copy">
+                                    Use automation that delivers business value while supporting sustainability goals. We design AI services to improve ROI
+                                    <!-- -->
+                                    <span class="jsx-71ebba0747e796c whitespace-nowrap">&amp;</span>
+                                    embed climate-positive impact in day-to-day operations.
+                                </p>
+                            </div>
+                            <button type="button" class="jsx-71ebba0747e796c climate-parallax__cta btn btn-primary gsap-fade">
+                                <span class="jsx-71ebba0747e796c">Learn How It Works</span>
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="from-ideas motion-reveal motion-reveal--right" id="about-us" aria-labelledby="ideas-title" style="opacity:0;transform:translateY(48px) scale(0.98)">
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c bg-blur bg-blur--c"></div>
+                    <div aria-hidden="true" class="jsx-71ebba0747e796c bg-blur bg-blur--d"></div>
+                    <div class="jsx-71ebba0747e796c container-fluid ideas-inner ideas-inner--mdx w-full">
+                        <div class="jsx-71ebba0747e796c ideas-head w-full">
+                            <h2 class="jsx-71ebba0747e796c ideas-headline gsap-fade w-full max-w-none">
+                                <span class="jsx-71ebba0747e796c">AI That Actively Reverses</span>
+                                <span class="jsx-71ebba0747e796c ideas-headline__strong">Climate Impact</span>
+                            </h2>
+                            <p class="jsx-71ebba0747e796c ideas-lede gsap-fade w-full max-w-none text-[20px]">Powered by UmbrellaNET &#x27;s climate-positive Managed Cloud, our AI automation platform doesn &#x27;t just reduce emissions; it actively removes more carbon from the atmosphere than it produces.</p>
+                        </div>
+                        <div role="presentation" class="jsx-71ebba0747e796c ideas-stage mt-[1em]">
+                            <div class="jsx-71ebba0747e796c ideas-stage__sphere-and-title">
+                                <div aria-hidden="true" class="jsx-71ebba0747e796c ideas-sphere ideas-sphere--video">
+                                    <video src="/white-animation.mp4" muted="" playsInline="" preload="auto" class="jsx-71ebba0747e796c hero-sphere-video hero-sphere-video--standalone hero-sphere-video--layer"></video>
+                                    <video src="/white-animation.mp4" muted="" playsInline="" preload="auto" class="jsx-71ebba0747e796c hero-sphere-video hero-sphere-video--standalone"></video>
+                                </div>
+                                <div class="jsx-71ebba0747e796c ideas-center w-full max-w-none">
+                                    <h2 id="ideas-title" class="jsx-71ebba0747e796c ideas-title w-full max-w-none">
+                                        <span class="jsx-71ebba0747e796c">Guaranteed Returns</span>
+                                        <span class="jsx-71ebba0747e796c">Measurable Impact</span>
+                                    </h2>
+                                    <p class="jsx-71ebba0747e796c ideas-copy w-full max-w-none">
+                                        <span class="jsx-71ebba0747e796c">Reduced operational costs through intelligent automationâ€”</span>
+                                        <span class="jsx-71ebba0747e796c ideas-copy__muted">Increased sales and customer lifetime value.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div role="group" aria-label="Explore solutions" class="jsx-71ebba0747e796c ideas-pills-wrap">
+                                <button type="button" data-open-aiaas="true" aria-label="AI Automation as a Service details" class="jsx-71ebba0747e796c ideas-pill ideas-pill--tl ideas-pill--interactive">
+                                    <span aria-hidden="true" class="jsx-71ebba0747e796c ideas-pill__icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="jsx-71ebba0747e796c">
+                                            <path d="M7 3h10l2 4-2 4H7L5 7l2-4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                            <path d="M9 9h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="jsx-71ebba0747e796c">AI Automation as a Service</span>
+                                </button>
+                                <button type="button" data-open-climate="true" aria-label="Climate-Positive AI Innovation details" class="jsx-71ebba0747e796c ideas-pill ideas-pill--tr ideas-pill--interactive">
+                                    <span aria-hidden="true" class="jsx-71ebba0747e796c ideas-pill__icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="jsx-71ebba0747e796c">
+                                            <path d="M4 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                            <path d="M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                            <path d="M20 7h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                            <path d="M9 12h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                            <circle cx="16" cy="7" r="2" stroke="currentColor" stroke-width="1.5" class="jsx-71ebba0747e796c"></circle>
+                                        </svg>
+                                    </span>
+                                    <span class="jsx-71ebba0747e796c">Climate-Positive AI Innovation</span>
+                                </button>
+                                <button type="button" data-open-roi="true" aria-label="Proven Results and ROI details" class="jsx-71ebba0747e796c ideas-pill ideas-pill--bl ideas-pill--interactive">
+                                    <span aria-hidden="true" class="jsx-71ebba0747e796c ideas-pill__icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="jsx-71ebba0747e796c">
+                                            <path d="M7 13l4 4 9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                            <path d="M6 7h6l2 2v6l-2 2H6l-2-2V9l2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity=".55" class="jsx-71ebba0747e796c"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="jsx-71ebba0747e796c">Proven Results &amp;ROI</span>
+                                </button>
+                                <button type="button" data-open-why="true" aria-label="Why UmbrellaLabs details" class="jsx-71ebba0747e796c ideas-pill ideas-pill--br ideas-pill--interactive">
+                                    <span aria-hidden="true" class="jsx-71ebba0747e796c ideas-pill__icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="jsx-71ebba0747e796c">
+                                            <path d="M7 12c0-2.2 1.8-4 4-4h2c2.2 0 4 1.8 4 4v2c0 2.2-1.8 4-4 4h-2c-2.2 0-4-1.8-4-4v-2Z" stroke="currentColor" stroke-width="1.5" class="jsx-71ebba0747e796c"></path>
+                                            <path d="M10 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".55" class="jsx-71ebba0747e796c"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="jsx-71ebba0747e796c">Why UmbrellaLabs</span>
+                                </button>
+                            </div>
+                            <div aria-hidden="true" class="jsx-71ebba0747e796c ideas-indicators">
+                                <span class="jsx-71ebba0747e796c ideas-indicators__bar"></span>
+                                <span class="jsx-71ebba0747e796c ideas-indicators__bar"></span>
+                                <span class="jsx-71ebba0747e796c ideas-indicators__bar"></span>
+                                <span class="jsx-71ebba0747e796c ideas-indicators__bar"></span>
+                                <span class="jsx-71ebba0747e796c ideas-indicators__bar"></span>
+                            </div>
+                        </div>
+                        <dialog id="aiaas-modal" aria-label="AI Automation as a Service" class="jsx-71ebba0747e796c modal modal--aiaas">
+                            <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--aiaas">
+                                <div class="jsx-71ebba0747e796c modal__header modal__header--aiaas">
+                                    <div class="jsx-71ebba0747e796c modal__header-content">
+                                        <div class="jsx-71ebba0747e796c aiaas-modal__kicker">
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c aiaas-modal__dot"></span>
+                                            <span class="jsx-71ebba0747e796c">AI AUTOMATION AS A SERVICE</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-close-modal="true" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                                        <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                                    </button>
+                                </div>
+                                <div class="jsx-71ebba0747e796c modal__content">
+                                    <h3 class="jsx-71ebba0747e796c modal__body-title modal__body-title--aiaas">Enterprise AI Without Enterprise Costs</h3>
+                                    <p class="jsx-71ebba0747e796c modal__copy">UmbrellaLabs makes AI automation accessible through an outcome-based AIaaS model. You pay for measurable business results rather than software access alone.</p>
+                                    <p class="jsx-71ebba0747e796c modal__copy">The platform scales from SMB teams to enterprise operations with R &amp;D-backed delivery and clear ROI tracking across each phase of implementation.</p>
+                                    <div class="jsx-71ebba0747e796c aiaas-modal__section-title">Key Benefits</div>
+                                    <ul aria-label="Key benefits" class="jsx-71ebba0747e796c aiaas-benefits">
+                                        <li class="jsx-71ebba0747e796c aiaas-benefit">
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__label">Scalable</span>
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__copy">Grows with your business from SMB to Enterprise</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c aiaas-benefit">
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__label">Cost-Effective</span>
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__copy">No large upfront investment required</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c aiaas-benefit">
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__label">Climate-Positive</span>
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__copy">Powered by UmbrellaNET &#x27;s sustainable cloud infrastructure</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c aiaas-benefit">
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__label">ROI-Guaranteed</span>
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__copy">Pay for results, with measurable outcome commitments</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c aiaas-benefit">
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__label">Proven</span>
+                                            <span class="jsx-71ebba0747e796c aiaas-benefit__copy">R &amp;D-backed innovation with validated methodologies</span>
+                                        </li>
+                                    </ul>
+                                    <div class="jsx-71ebba0747e796c aiaas-modal__actions">
+                                        <a href="/solutions" class="jsx-71ebba0747e796c btn btn-primary">
+                                            <span class="jsx-71ebba0747e796c">Explore Solutions</span>
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </dialog>
+                        <dialog id="climate-modal" aria-label="Climate-Positive AI Innovation" class="jsx-71ebba0747e796c modal modal--climate">
+                            <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--climate">
+                                <div class="jsx-71ebba0747e796c modal__header modal__header--climate">
+                                    <div class="jsx-71ebba0747e796c modal__header-content">
+                                        <div class="jsx-71ebba0747e796c climate-modal__kicker">
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c climate-modal__dot"></span>
+                                            <span class="jsx-71ebba0747e796c">CLIMATE-POSITIVE AI INNOVATION</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-close-modal="true" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                                        <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                                    </button>
+                                </div>
+                                <div class="jsx-71ebba0747e796c modal__content">
+                                    <h3 class="jsx-71ebba0747e796c modal__body-title modal__body-title--climate">AI That Actively Reverses Climate Impact</h3>
+                                    <p class="jsx-71ebba0747e796c modal__copy">At UmbrellaLabs, sustainability isn &#x27;t an afterthoughtâ€”it &#x27;s built into every solution we deliver. Powered by UmbrellaNET &#x27;s climate-positive Managed Cloud, our AI automation platform doesn &#x27;t just reduce emissions; it actively removes more carbon from the atmosphere than it produces.</p>
+                                    <p class="jsx-71ebba0747e796c modal__copy">When you partner with UmbrellaLabs, you &#x27;re not just improving your business operationsâ€”you &#x27;re contributing to environmental restoration. Our clients reduce their carbon footprint by up to 85% compared to traditional infrastructure, while gaining access to transparent climate impact reporting that supports ESG compliance and sustainability goals.</p>
+                                    <div class="jsx-71ebba0747e796c climate-modal__section-title">Key Features</div>
+                                    <ul aria-label="Key features" class="jsx-71ebba0747e796c climate-features">
+                                        <li class="jsx-71ebba0747e796c climate-feature">
+                                            <span class="jsx-71ebba0747e796c climate-feature__label">Climate-Positive Infrastructure</span>
+                                            <span class="jsx-71ebba0747e796c climate-feature__copy">Actively removes more carbon than emitted</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c climate-feature">
+                                            <span class="jsx-71ebba0747e796c climate-feature__label">Up to 85% Carbon Reduction</span>
+                                            <span class="jsx-71ebba0747e796c climate-feature__copy">Compared to traditional data centers</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c climate-feature">
+                                            <span class="jsx-71ebba0747e796c climate-feature__label">100% Renewable Energy</span>
+                                            <span class="jsx-71ebba0747e796c climate-feature__copy">All AI operations powered by clean energy</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c climate-feature">
+                                            <span class="jsx-71ebba0747e796c climate-feature__label">Energy-Efficient AI</span>
+                                            <span class="jsx-71ebba0747e796c climate-feature__copy">Optimized models and carbon-aware workload scheduling</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c climate-feature">
+                                            <span class="jsx-71ebba0747e796c climate-feature__label">Transparent Reporting</span>
+                                            <span class="jsx-71ebba0747e796c climate-feature__copy">Real-time climate impact dashboards</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c climate-feature">
+                                            <span class="jsx-71ebba0747e796c climate-feature__label">ESG Compliance Support</span>
+                                            <span class="jsx-71ebba0747e796c climate-feature__copy">Comprehensive sustainability reporting</span>
+                                        </li>
+                                    </ul>
+                                    <div class="jsx-71ebba0747e796c climate-modal__actions">
+                                        <button type="button" class="jsx-71ebba0747e796c btn btn-primary">
+                                            <span class="jsx-71ebba0747e796c">See Your Climate Impact</span>
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </dialog>
+                        <dialog id="roi-modal" aria-label="Proven Results and ROI" class="jsx-71ebba0747e796c modal modal--roi">
+                            <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--roi">
+                                <div class="jsx-71ebba0747e796c modal__header modal__header--roi">
+                                    <div class="jsx-71ebba0747e796c modal__header-content">
+                                        <div class="jsx-71ebba0747e796c roi-modal__kicker">
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c roi-modal__dot"></span>
+                                            <span class="jsx-71ebba0747e796c">PROVEN RESULTS &amp;ROI</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-close-modal="true" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                                        <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                                    </button>
+                                </div>
+                                <div class="jsx-71ebba0747e796c modal__content">
+                                    <h3 class="jsx-71ebba0747e796c modal__body-title modal__body-title--roi">Guaranteed Returns, Measurable Impact</h3>
+                                    <p class="jsx-71ebba0747e796c modal__copy">Our outcome-based approach includes clear, measurable ROI commitments for every engagement. From cost savings and revenue growth to efficiency gains and carbon reduction, you can track results directly.</p>
+                                    <p class="jsx-71ebba0747e796c modal__copy">Clients across industries have achieved measurable improvements through AI automation delivered on our R &amp;D-backed, climate-positive infrastructure.</p>
+                                    <div class="jsx-71ebba0747e796c roi-modal__section-title">Example Outcomes</div>
+                                    <ul aria-label="Example outcomes" class="jsx-71ebba0747e796c roi-outcomes">
+                                        <li class="jsx-71ebba0747e796c roi-outcome">
+                                            <span class="jsx-71ebba0747e796c roi-outcome__label">Cost Savings</span>
+                                            <span class="jsx-71ebba0747e796c roi-outcome__copy">Reduced operational costs through intelligent automation</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c roi-outcome">
+                                            <span class="jsx-71ebba0747e796c roi-outcome__label">Revenue Growth</span>
+                                            <span class="jsx-71ebba0747e796c roi-outcome__copy">Increased sales and customer lifetime value</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c roi-outcome">
+                                            <span class="jsx-71ebba0747e796c roi-outcome__label">Efficiency Gains</span>
+                                            <span class="jsx-71ebba0747e796c roi-outcome__copy">Streamlined processes and improved productivity</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c roi-outcome">
+                                            <span class="jsx-71ebba0747e796c roi-outcome__label">Carbon Reduction</span>
+                                            <span class="jsx-71ebba0747e796c roi-outcome__copy">Measurable environmental impact and sustainability achievements</span>
+                                        </li>
+                                    </ul>
+                                    <div class="jsx-71ebba0747e796c roi-modal__actions">
+                                        <a href="/solutions" class="jsx-71ebba0747e796c btn btn-primary">
+                                            <span class="jsx-71ebba0747e796c">View Success Stories</span>
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </dialog>
+                        <dialog id="why-modal" aria-label="Why UmbrellaLabs" class="jsx-71ebba0747e796c modal modal--why">
+                            <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--why">
+                                <div class="jsx-71ebba0747e796c modal__header modal__header--why">
+                                    <div class="jsx-71ebba0747e796c modal__header-content">
+                                        <div class="jsx-71ebba0747e796c why-modal__kicker">
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c why-modal__dot"></span>
+                                            <span class="jsx-71ebba0747e796c">WHY UMBRELLALABS</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" data-close-modal="true" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                                        <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                                    </button>
+                                </div>
+                                <div class="jsx-71ebba0747e796c modal__content">
+                                    <h3 class="jsx-71ebba0747e796c modal__body-title modal__body-title--why">The UmbrellaLabs Advantage</h3>
+                                    <p class="jsx-71ebba0747e796c modal__copy">Choosing UmbrellaLabs means working with a climate-positive AI automation partner. We combine R &amp;D-backed methods, outcome-based ROI commitments, and climate-positive infrastructure in one delivery model.</p>
+                                    <div class="jsx-71ebba0747e796c why-modal__section-title">Our Differentiators</div>
+                                    <ul aria-label="Our differentiators" class="jsx-71ebba0747e796c why-diffs">
+                                        <li class="jsx-71ebba0747e796c why-diff">
+                                            <span class="jsx-71ebba0747e796c why-diff__label">R &amp;D Grant-Backed Research Excellence</span>
+                                            <span class="jsx-71ebba0747e796c why-diff__copy">Our solutions are validated by government and institutional R &amp;D grants, demonstrating our commitment to innovation leadership and research credibility.</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c why-diff">
+                                            <span class="jsx-71ebba0747e796c why-diff__label">Outcome-Based ROI Guarantees</span>
+                                            <span class="jsx-71ebba0747e796c why-diff__copy">Our outcome-based pricing model is tied to measurable business results, so value delivery remains transparent and trackable.</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c why-diff">
+                                            <span class="jsx-71ebba0747e796c why-diff__label">Climate-Positive Infrastructure Leadership</span>
+                                            <span class="jsx-71ebba0747e796c why-diff__copy">Powered by UmbrellaNET &#x27;s climate-positive Managed Cloud, we &#x27;re the only AI automation provider that actively reverses climate impact while delivering enterprise-grade performance.</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c why-diff">
+                                            <span class="jsx-71ebba0747e796c why-diff__label">Full-Stack AI Delivery Partnership</span>
+                                            <span class="jsx-71ebba0747e796c why-diff__copy">From strategy to deployment and ongoing optimization, we take end-to-end responsibility for your AI automation success.</span>
+                                        </li>
+                                        <li class="jsx-71ebba0747e796c why-diff">
+                                            <span class="jsx-71ebba0747e796c why-diff__label">SMB to Enterprise Expertise</span>
+                                            <span class="jsx-71ebba0747e796c why-diff__copy">Whether you &#x27;re a growing small business or a large enterprise, we have the experience and scalability to meet your needs.</span>
+                                        </li>
+                                    </ul>
+                                    <div class="jsx-71ebba0747e796c why-modal__actions">
+                                        <a href="/contact" class="jsx-71ebba0747e796c btn btn-primary">
+                                            <span class="jsx-71ebba0747e796c">Schedule Your Consultation</span>
+                                            <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+                </section>
+                <section class="contact motion-reveal motion-reveal--right" id="contact" aria-labelledby="contact-title" style="opacity:0;transform:translateY(48px) scale(0.98)">
+                    <div class="jsx-71ebba0747e796c container-fluid contact-inner contact-inner--mdx">
+                        <div class="jsx-71ebba0747e796c contact-left">
+                            <div class="jsx-71ebba0747e796c contact-kicker contact-kicker--mdx">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c contact-kicker__dot"></span>
+                                <span class="jsx-71ebba0747e796c">Connect with us</span>
+                            </div>
+                            <h2 id="contact-title" class="jsx-71ebba0747e796c contact-title gsap-fade">
+                                <span class="jsx-71ebba0747e796c">Ready to Transform Your Business with Climate-Positive AI?</span>
+                            </h2>
+                            <div aria-hidden="true" class="jsx-71ebba0747e796c contact-underline"></div>
+                            <a href="mailto:hello@umbrellalabs.example" class="jsx-71ebba0747e796c contact-email contact-email--mdx">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c contact-email__icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="jsx-71ebba0747e796c">
+                                        <path d="M6 7h12l2 3v8l-2 2H6l-2-2v-8l2-3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M6 10l6 5 6-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </span>
+                                <span class="jsx-71ebba0747e796c">enterprise@umbrellalabs.ai</span>
+                            </a>
+                            <div aria-label="Social links" class="jsx-71ebba0747e796c contact-social">
+                                <a href="#github" aria-label="GitHub" class="jsx-71ebba0747e796c social">
+                                    <svg width="18" height="18" viewBox="0 -0.5 25 25" fill="currentColor" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="m12.301 0h.093c2.242 0 4.34.613 6.137 1.68l-.055-.031c1.871 1.094 3.386 2.609 4.449 4.422l.031.058c1.04 1.769 1.654 3.896 1.654 6.166 0 5.406-3.483 10-8.327 11.658l-.087.026c-.063.02-.135.031-.209.031-.162 0-.312-.054-.433-.144l.002.001c-.128-.115-.208-.281-.208-.466 0-.005 0-.01 0-.014v.001q0-.048.008-1.226t.008-2.154c.007-.075.011-.161.011-.249 0-.792-.323-1.508-.844-2.025.618-.061 1.176-.163 1.718-.305l-.076.017c.573-.16 1.073-.373 1.537-.642l-.031.017c.508-.28.938-.636 1.292-1.058l.006-.007c.372-.476.663-1.036.84-1.645l.009-.035c.209-.683.329-1.468.329-2.281 0-.045 0-.091-.001-.136v.007c0-.022.001-.047.001-.072 0-1.248-.482-2.383-1.269-3.23l.003.003c.168-.44.265-.948.265-1.479 0-.649-.145-1.263-.404-1.814l.011.026c-.115-.022-.246-.035-.381-.035-.334 0-.649.078-.929.216l.012-.005c-.568.21-1.054.448-1.512.726l.038-.022-.609.384c-.922-.264-1.981-.416-3.075-.416s-2.153.152-3.157.436l.081-.02q-.256-.176-.681-.433c-.373-.214-.814-.421-1.272-.595l-.066-.022c-.293-.154-.64-.244-1.009-.244-.124 0-.246.01-.364.03l.013-.002c-.248.524-.393 1.139-.393 1.788 0 .531.097 1.04.275 1.509l-.01-.029c-.785.844-1.266 1.979-1.266 3.227 0 .025 0 .051.001.076v-.004c-.001.039-.001.084-.001.13 0 .809.12 1.591.344 2.327l-.015-.057c.189.643.476 1.202.85 1.693l-.009-.013c.354.435.782.793 1.267 1.062l.022.011c.432.252.933.465 1.46.614l.046.011c.466.125 1.024.227 1.595.284l.046.004c-.431.428-.718 1-.784 1.638l-.001.012c-.207.101-.448.183-.699.236l-.021.004c-.256.051-.549.08-.85.08-.022 0-.044 0-.066 0h.003c-.394-.008-.756-.136-1.055-.348l.006.004c-.371-.259-.671-.595-.881-.986l-.007-.015c-.198-.336-.459-.614-.768-.827l-.009-.006c-.225-.169-.49-.301-.776-.38l-.016-.004-.32-.048c-.023-.002-.05-.003-.077-.003-.14 0-.273.028-.394.077l.007-.003q-.128.072-.08.184c.039.086.087.16.145.225l-.001-.001c.061.072.13.135.205.19l.003.2.112.08c.283.148.516.354.693.603l.004.006c.191.237.359.505.494.792l.01.024.16.368c.135.402.38.738.7.981l.005.004c.3.234.662.402 1.057.478l.016.002c.33.064.714.104 1.106.112h.007c.045.002.097.002.15.002.261 0 .517-.021.767-.062l-.027.004.368-.064q0 .609.008 1.418t.008.873v.014c0 .185-.08.351-.208.466h-.001c-.119.089-.268.143-.431.143-.075 0-.147-.011-.214-.032l.005.001c-4.929-1.689-8.409-6.283-8.409-11.69 0-2.268.612-4.393 1.681-6.219l-.032.058c1.094-1.871 2.609-3.386 4.422-4.449l.058-.031c1.739-1.034 3.835-1.645 6.073-1.645h.098-.005zm-7.64 17.666q.048-.112-.112-.192-.16-.048-.208.032-.048.112.112.192.144.096.208-.032zm.497.545q.112-.08-.032-.256-.16-.144-.256-.048-.112.08.032.256.159.157.256.047zm.48.72q.144-.112 0-.304-.128-.208-.272-.096-.144.08 0 .288t.272.112zm.672.673q.128-.128-.064-.304-.192-.192-.32-.048-.144.128.064.304.192.192.32.044zm.913.4q.048-.176-.208-.256-.24-.064-.304.112t.208.24q.24.097.304-.096zm1.009.08q0-.208-.272-.176-.256 0-.256.176 0 .208.272.176.256.001.256-.175zm.929-.16q-.032-.176-.288-.144-.256.048-.224.24t.288.128.225-.224z" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </a>
+                                <a href="#x" aria-label="X" class="jsx-71ebba0747e796c social">X</a>
+                                <a href="#linkedin" aria-label="LinkedIn" class="jsx-71ebba0747e796c social">in</a>
+                            </div>
+                        </div>
+                        <div role="region" aria-label="Contact form" class="jsx-71ebba0747e796c contact-right">
+                            <h3 class="jsx-71ebba0747e796c contact-form-title gsap-fade">Let &#x27;s talk</h3>
+                            <form id="contact-form" class="jsx-71ebba0747e796c form form--mdx">
+                                <div class="jsx-71ebba0747e796c form-row">
+                                    <label class="jsx-71ebba0747e796c field field--line">
+                                        <span class="jsx-71ebba0747e796c field__label">Company Name</span>
+                                        <input type="text" autoComplete="organization" class="jsx-71ebba0747e796c field__control field__control--line" name="companyName"/>
+                                    </label>
+                                    <label class="jsx-71ebba0747e796c field field--line">
+                                        <span class="jsx-71ebba0747e796c field__label">Your Name</span>
+                                        <input type="text" autoComplete="name" class="jsx-71ebba0747e796c field__control field__control--line" name="yourName"/>
+                                    </label>
+                                </div>
+                                <div class="jsx-71ebba0747e796c form-row">
+                                    <label class="jsx-71ebba0747e796c field field--line">
+                                        <span class="jsx-71ebba0747e796c field__label">
+                                            Email <span class="jsx-71ebba0747e796c field__req">*</span>
+                                        </span>
+                                        <input type="email" autoComplete="email" required="" class="jsx-71ebba0747e796c field__control field__control--line" name="email"/>
+                                    </label>
+                                    <label class="jsx-71ebba0747e796c field field--line">
+                                        <span class="jsx-71ebba0747e796c field__label">Phone</span>
+                                        <input type="tel" autoComplete="tel" class="jsx-71ebba0747e796c field__control field__control--line" name="phone"/>
+                                    </label>
+                                </div>
+                                <div class="jsx-71ebba0747e796c form-row">
+                                    <label class="jsx-71ebba0747e796c field field--line">
+                                        <span class="jsx-71ebba0747e796c field__label">Company Size</span>
+                                        <select name="companySize" class="jsx-71ebba0747e796c field__control field__control--line">
+                                            <option value="" class="jsx-71ebba0747e796c" selected="">Selectâ€¦</option>
+                                            <option value="smb" class="jsx-71ebba0747e796c">SMB (1-100 employees)</option>
+                                            <option value="midmarket" class="jsx-71ebba0747e796c">Mid-Market (101-1,000 employees)</option>
+                                            <option value="enterprise" class="jsx-71ebba0747e796c">Enterprise (1,000+ employees)</option>
+                                        </select>
+                                    </label>
+                                    <label class="jsx-71ebba0747e796c field field--line">
+                                        <span class="jsx-71ebba0747e796c field__label">Primary Interest</span>
+                                        <select name="primaryInterest" class="jsx-71ebba0747e796c field__control field__control--line">
+                                            <option value="" class="jsx-71ebba0747e796c" selected="">Selectâ€¦</option>
+                                            <option value="aiaas" class="jsx-71ebba0747e796c">AIaaS Platform</option>
+                                            <option value="custom" class="jsx-71ebba0747e796c">Custom AI Solutions</option>
+                                            <option value="consulting" class="jsx-71ebba0747e796c">Strategic Consulting</option>
+                                            <option value="climate" class="jsx-71ebba0747e796c">Climate-Positive Infrastructure</option>
+                                            <option value="roi" class="jsx-71ebba0747e796c">ROI Assessment</option>
+                                            <option value="academy" class="jsx-71ebba0747e796c">Academy Training</option>
+                                            <option value="other" class="jsx-71ebba0747e796c">Other</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <label class="jsx-71ebba0747e796c field">
+                                    <span class="jsx-71ebba0747e796c field__label field__label--spaced">Current Challenge/Goal</span>
+                                    <textarea name="challenge" rows="6" placeholder="Tell us about your business challenges, AI automation goals, or questions about our solutions." class="jsx-71ebba0747e796c field__control field__control--mdx-textarea"></textarea>
+                                </label>
+                                <div class="jsx-71ebba0747e796c form-actions form-actions--mdx">
+                                    <button type="submit" aria-label="Request free assessment" class="jsx-71ebba0747e796c contact-send">
+                                        <span class="jsx-71ebba0747e796c">Send</span>
+                                        <span aria-hidden="true" class="jsx-71ebba0747e796c ">â†—</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <footer class="footer" id="blog" data-reveal="true">
+                    <div class="container footer-inner footer-inner--wide">
+                        <div class="footer-top flex-col md:flex-row md:items-center md:justify-between gap-[20px] md:gap-[16px]">
+                            <nav class="footer-links flex-1 w-full md:w-auto justify-center md:justify-start flex-wrap gap-[12px] md:gap-[18px]" aria-label="Footer">
+                                <a href="/about">About Us</a>
+                                <a href="/services">Services</a>
+                                <a href="/solutions">Solutions</a>
+                                <a href="/links">Links</a>
+                                <a href="/academy">Academy</a>
+                                <a href="/contact">Contact Us</a>
+                            </nav>
+                            <div class="footer-actions flex items-center justify-center md:justify-end gap-[12px] w-full md:w-auto">
+                                <a class="btn btn-primary" href="/portal" aria-label="Go to portal selection">
+                                    <span>Portal</span>
+                                </a>
+                                <button class="scroll-top" type="button" data-scroll-top="true">Scroll to top</button>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="footer-meta">
+                                <span>Â© 2026 UmbrellaLabs. All rights reserved.</span>
+                                <span class="footer-dot" aria-hidden="true">Â·</span>
+                                <a href="/privacy">Privacy Policy</a>
+                                <span class="footer-dot" aria-hidden="true">Â·</span>
+                                <a href="/terms">Terms &amp;Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+            <dialog id="showreel-modal" aria-label="UmbrellaLabs showreel" class="jsx-71ebba0747e796c modal">
+                <div class="jsx-71ebba0747e796c modal__inner">
+                    <button type="button" data-close-modal="true" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                        <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                    </button>
+                    <div class="jsx-71ebba0747e796c modal__media">
+                        <div class="jsx-71ebba0747e796c showreel">
+                            <div class="jsx-71ebba0747e796c showreel__badge">UmbrellaLabs showreel</div>
+                            <div class="jsx-71ebba0747e796c showreel__controls">
+                                <button type="button" data-mute="true" class="jsx-71ebba0747e796c btn btn-ghost btn-small">MUTE</button>
+                                <button type="button" data-unmute="true" hidden="" class="jsx-71ebba0747e796c btn btn-ghost btn-small">UNMUTE</button>
+                            </div>
+                        </div>
+                        <p class="jsx-71ebba0747e796c modal__hint">This is a lightweight placeholder (no external video embed) to keep the project dependency-free.</p>
+                    </div>
+                </div>
+            </dialog>
+            <dialog id="roi-assessment-modal" aria-label="ROI Assessment Request" class="jsx-71ebba0747e796c modal modal--roi-assessment">
+                <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--roi-assessment">
+                    <div class="jsx-71ebba0747e796c modal__header modal__header--roi-assessment">
+                        <div class="jsx-71ebba0747e796c modal__header-content">
+                            <div class="jsx-71ebba0747e796c roi-assessment-modal__kicker">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c roi-assessment-modal__dot"></span>
+                                <span class="jsx-71ebba0747e796c">FREE ROI ASSESSMENT</span>
+                            </div>
+                        </div>
+                        <button type="button" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                            <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                        </button>
+                    </div>
+                    <div class="jsx-71ebba0747e796c modal__content modal__content--roi-coming-soon">
+                        <div class="jsx-71ebba0747e796c roi-coming-soon-content">
+                            <div class="jsx-71ebba0747e796c roi-coming-soon-icon">
+                                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                    <circle cx="60" cy="60" r="55" stroke="url(#roiGradient1)" stroke-width="3" fill="none" opacity="0.3" class="jsx-71ebba0747e796c"></circle>
+                                    <circle cx="60" cy="60" r="45" stroke="url(#roiGradient2)" stroke-width="2" fill="none" opacity="0.2" class="jsx-71ebba0747e796c"></circle>
+                                    <path d="M60 30 L60 60 L75 75" stroke="url(#roiGradient3)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                    <defs class="jsx-71ebba0747e796c">
+                                        <linearGradient id="roiGradient1" x1="0%" y1="0%" x2="100%" y2="100%" class="jsx-71ebba0747e796c">
+                                            <stop offset="0%" stop-color="#45A6DB" class="jsx-71ebba0747e796c"></stop>
+                                            <stop offset="100%" stop-color="#26D4B3" class="jsx-71ebba0747e796c"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="roiGradient2" x1="0%" y1="0%" x2="100%" y2="100%" class="jsx-71ebba0747e796c">
+                                            <stop offset="0%" stop-color="#C7B6FF" class="jsx-71ebba0747e796c"></stop>
+                                            <stop offset="100%" stop-color="#45A6DB" class="jsx-71ebba0747e796c"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="roiGradient3" x1="0%" y1="0%" x2="100%" y2="100%" class="jsx-71ebba0747e796c">
+                                            <stop offset="0%" stop-color="#45A6DB" class="jsx-71ebba0747e796c"></stop>
+                                            <stop offset="100%" stop-color="#26D4B3" class="jsx-71ebba0747e796c"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h2 class="jsx-71ebba0747e796c roi-coming-soon-title">We &#x27;re Building Something Amazing</h2>
+                            <p class="jsx-71ebba0747e796c roi-coming-soon-description">Our ROI Assessment tool is currently under development. We &#x27;re crafting an exceptional experience that will help you discover the true value and impact of climate-positive AI automation for your business.</p>
+                            <div class="jsx-71ebba0747e796c roi-coming-soon-features">
+                                <div class="jsx-71ebba0747e796c roi-coming-soon-feature">
+                                    <div class="jsx-71ebba0747e796c roi-coming-soon-feature__icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="jsx-71ebba0747e796c">Personalized ROI Calculations</span>
+                                </div>
+                                <div class="jsx-71ebba0747e796c roi-coming-soon-feature">
+                                    <div class="jsx-71ebba0747e796c roi-coming-soon-feature__icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="jsx-71ebba0747e796c">Climate Impact Analysis</span>
+                                </div>
+                                <div class="jsx-71ebba0747e796c roi-coming-soon-feature">
+                                    <div class="jsx-71ebba0747e796c roi-coming-soon-feature__icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="jsx-71ebba0747e796c">Custom Business Insights</span>
+                                </div>
+                            </div>
+                            <div class="jsx-71ebba0747e796c roi-coming-soon-cta">
+                                <p class="jsx-71ebba0747e796c roi-coming-soon-cta__text">Be the first to know when we launch</p>
+                                <a class="btn btn-primary" href="/contact">
+                                    <span class="jsx-71ebba0747e796c">Get Notified</span>
+                                    <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+            <dialog id="climate-calculator-modal" aria-label="Climate Impact Calculator" class="jsx-71ebba0747e796c modal modal--climate-calculator">
+                <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--climate-calculator">
+                    <div class="jsx-71ebba0747e796c modal__header modal__header--climate-calculator">
+                        <div class="jsx-71ebba0747e796c modal__header-content">
+                            <div class="jsx-71ebba0747e796c climate-calc-modal__kicker">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c climate-calc-modal__dot"></span>
+                                <span class="jsx-71ebba0747e796c">CLIMATE IMPACT CALCULATOR</span>
+                            </div>
+                        </div>
+                        <button type="button" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                            <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                        </button>
+                    </div>
+                    <div class="jsx-71ebba0747e796c modal__content modal__content--climate-calculator">
+                        <p class="jsx-71ebba0747e796c climate-calc-modal__description">Estimate your current carbon footprint from AI and cloud operations. Then review the potential reduction with climate-positive infrastructure. Calculations are based on GHG Protocol standards.</p>
+                        <form class="jsx-71ebba0747e796c climate-calc-form">
+                            <div class="jsx-71ebba0747e796c climate-calc-form__section">
+                                <h4 class="jsx-71ebba0747e796c climate-calc-form__section-title">Your Current Operations</h4>
+                                <div class="jsx-71ebba0747e796c climate-calc-form__row">
+                                    <label class="jsx-71ebba0747e796c climate-calc-form__field">
+                                        <span class="jsx-71ebba0747e796c climate-calc-form__label">Monthly Compute Hours</span>
+                                        <input type="number" placeholder="e.g., 1000" min="0" step="0.1" class="jsx-71ebba0747e796c climate-calc-form__input" value=""/>
+                                        <span class="jsx-71ebba0747e796c climate-calc-form__hint">Average compute hours per month</span>
+                                    </label>
+                                    <label class="jsx-71ebba0747e796c climate-calc-form__field">
+                                        <span class="jsx-71ebba0747e796c climate-calc-form__label">Data Processed (GB)</span>
+                                        <input type="number" placeholder="e.g., 50000" min="0" step="0.1" class="jsx-71ebba0747e796c climate-calc-form__input" value=""/>
+                                        <span class="jsx-71ebba0747e796c climate-calc-form__hint">Data processed per month in GB</span>
+                                    </label>
+                                </div>
+                                <label class="jsx-71ebba0747e796c climate-calc-form__field climate-calc-form__field--full">
+                                    <span class="jsx-71ebba0747e796c climate-calc-form__label">Current Cloud Provider / Infrastructure</span>
+                                    <select required="" class="jsx-71ebba0747e796c climate-calc-form__input">
+                                        <option value="" class="jsx-71ebba0747e796c" selected="">Select provider...</option>
+                                        <option value="aws" class="jsx-71ebba0747e796c">Amazon Web Services (AWS)</option>
+                                        <option value="azure" class="jsx-71ebba0747e796c">Microsoft Azure</option>
+                                        <option value="gcp" class="jsx-71ebba0747e796c">Google Cloud Platform (GCP)</option>
+                                        <option value="other" class="jsx-71ebba0747e796c">Other Cloud Provider</option>
+                                        <option value="on-premise" class="jsx-71ebba0747e796c">On-Premise Data Center</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="jsx-71ebba0747e796c climate-calc-form__actions">
+                                <button type="submit" class="jsx-71ebba0747e796c btn btn-primary climate-calc-form__submit">
+                                    <span class="jsx-71ebba0747e796c">Calculate Impact</span>
+                                    <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+            <dialog id="solutions-modal" aria-label="Explore Solutions" class="jsx-71ebba0747e796c modal modal--solutions">
+                <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--solutions">
+                    <div class="jsx-71ebba0747e796c modal__header modal__header--solutions">
+                        <div class="jsx-71ebba0747e796c modal__header-content">
+                            <div class="jsx-71ebba0747e796c solutions-modal__kicker">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c solutions-modal__dot"></span>
+                                <span class="jsx-71ebba0747e796c">SOLUTIONS</span>
+                            </div>
+                        </div>
+                        <button type="button" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                            <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                        </button>
+                    </div>
+                    <div class="jsx-71ebba0747e796c modal__content modal__content--solutions">
+                        <div class="jsx-71ebba0747e796c solutions-modal__grid">
+                            <a class="solutions-modal__card" href="/solutions#enterprise-ai">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c solutions-modal__card-arrow">â†—</span>
+                                <div class="jsx-71ebba0747e796c solutions-modal__card-icon solutions-modal__card-icon--enterprise">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M4 15l5-5 4 4 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M4 20h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c solutions-modal__card-title">Enterprise AI Automation Platform</h4>
+                                <p class="jsx-71ebba0747e796c solutions-modal__card-desc">Full-scale AI automation for large organizations with security, compliance, and sustainability built in.</p>
+                            </a>
+                            <a class="solutions-modal__card" href="/solutions#smb-growth">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c solutions-modal__card-arrow">â†—</span>
+                                <div class="jsx-71ebba0747e796c solutions-modal__card-icon solutions-modal__card-icon--smb">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c solutions-modal__card-title">SMB Growth Solutions</h4>
+                                <p class="jsx-71ebba0747e796c solutions-modal__card-desc">Enterprise-grade AI at accessible pricingâ€”scale as you grow without enterprise complexity.</p>
+                            </a>
+                            <a class="solutions-modal__card" href="/solutions#industry-solutions">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c solutions-modal__card-arrow">â†—</span>
+                                <div class="jsx-71ebba0747e796c solutions-modal__card-icon solutions-modal__card-icon--industry">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c solutions-modal__card-title">Industry-Specific AI Solutions</h4>
+                                <p class="jsx-71ebba0747e796c solutions-modal__card-desc">Tailored AI for your sectorâ€”healthcare, finance, retail, and more with compliance and ROI focus.</p>
+                            </a>
+                            <a class="solutions-modal__card" href="/solutions#climate-infrastructure">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c solutions-modal__card-arrow">â†—</span>
+                                <div class="jsx-71ebba0747e796c solutions-modal__card-icon solutions-modal__card-icon--climate">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M4 13c2-6 8-9 16-9-1 8-4 14-10 16-3 1-5-1-6-3Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M10 14l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c solutions-modal__card-title">Climate-Positive AI Infrastructure</h4>
+                                <p class="jsx-71ebba0747e796c solutions-modal__card-desc">AI that reverses climate impactâ€”powered by UmbrellaNETâ€™s climate-positive managed cloud.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+            <dialog id="how-it-works-modal" aria-label="How It Works - Services Summary" class="jsx-71ebba0747e796c modal modal--how-it-works">
+                <div role="document" class="jsx-71ebba0747e796c modal__inner modal__inner--how-it-works">
+                    <div class="jsx-71ebba0747e796c modal__header modal__header--how-it-works">
+                        <div class="jsx-71ebba0747e796c modal__header-content">
+                            <div class="jsx-71ebba0747e796c how-it-works-modal__kicker">
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c how-it-works-modal__dot"></span>
+                                <span class="jsx-71ebba0747e796c">SERVICES</span>
+                            </div>
+                        </div>
+                        <button type="button" aria-label="Close" class="jsx-71ebba0747e796c modal__close">
+                            <span aria-hidden="true" class="jsx-71ebba0747e796c">Ã—</span>
+                        </button>
+                    </div>
+                    <div class="jsx-71ebba0747e796c modal__content modal__content--how-it-works">
+                        <h3 class="jsx-71ebba0747e796c modal__body-title modal__body-title--how-it-works">How It Works</h3>
+                        <div class="jsx-71ebba0747e796c how-it-works-modal__grid">
+                            <div class="jsx-71ebba0747e796c how-it-works-modal__card">
+                                <div class="jsx-71ebba0747e796c how-it-works-modal__card-icon how-it-works-modal__card-icon--consulting">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c how-it-works-modal__card-title">Strategy &amp;Consulting</h4>
+                                <p class="jsx-71ebba0747e796c how-it-works-modal__card-desc">AI automation strategy and roadmap tailored to your goals.</p>
+                            </div>
+                            <div class="jsx-71ebba0747e796c how-it-works-modal__card">
+                                <div class="jsx-71ebba0747e796c how-it-works-modal__card-icon how-it-works-modal__card-icon--aiaas">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M4 15l5-5 4 4 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M4 20h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c how-it-works-modal__card-title">AIaaS Implementation</h4>
+                                <p class="jsx-71ebba0747e796c how-it-works-modal__card-desc">Enterprise-grade AI as a Service with outcome-based pricing.</p>
+                            </div>
+                            <div class="jsx-71ebba0747e796c how-it-works-modal__card">
+                                <div class="jsx-71ebba0747e796c how-it-works-modal__card-icon how-it-works-modal__card-icon--proposal">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M14 2v6h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M16 13H8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M16 17H8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c how-it-works-modal__card-title">Proposals &amp;Custom Builds</h4>
+                                <p class="jsx-71ebba0747e796c how-it-works-modal__card-desc">Scoped proposals and bespoke AI solutions for your needs.</p>
+                            </div>
+                            <div class="jsx-71ebba0747e796c how-it-works-modal__card">
+                                <div class="jsx-71ebba0747e796c how-it-works-modal__card-icon how-it-works-modal__card-icon--managed">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="jsx-71ebba0747e796c">
+                                        <path d="M4 13c2-6 8-9 16-9-1 8-4 14-10 16-3 1-5-1-6-3Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                        <path d="M10 14l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="jsx-71ebba0747e796c how-it-works-modal__card-title">Managed AI Services</h4>
+                                <p class="jsx-71ebba0747e796c how-it-works-modal__card-desc">Ongoing optimization and support on climate-positive infrastructure.</p>
+                            </div>
+                        </div>
+                        <div class="jsx-71ebba0747e796c how-it-works-modal__cta">
+                            <a class="btn btn-primary" href="/services">
+                                <span class="jsx-71ebba0747e796c">View More</span>
+                                <span aria-hidden="true" class="jsx-71ebba0747e796c">â†—</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+            <div aria-label="Quick actions" class="jsx-71ebba0747e796c landing-floating-cta">
+                <div class="jsx-71ebba0747e796c landing-floating-cta__menu ">
+                    <button type="button" class="jsx-71ebba0747e796c landing-floating-cta__link">
+                        <span aria-hidden="true" class="jsx-71ebba0747e796c landing-floating-cta__link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c">
+                                <path d="M4 13c2-6 8-9 16-9-1 8-4 14-10 16-3 1-5-1-6-3Z" class="jsx-71ebba0747e796c"></path>
+                                <path d="M10 14l4-4" class="jsx-71ebba0747e796c"></path>
+                            </svg>
+                        </span>
+                        <span class="jsx-71ebba0747e796c">Calculate Your Climate Impact</span>
+                    </button>
+                    <button type="button" class="jsx-71ebba0747e796c landing-floating-cta__link">
+                        <span aria-hidden="true" class="jsx-71ebba0747e796c landing-floating-cta__link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c">
+                                <path d="M4 19V5" class="jsx-71ebba0747e796c"></path>
+                                <path d="M20 19V9" class="jsx-71ebba0747e796c"></path>
+                                <path d="M12 19V13" class="jsx-71ebba0747e796c"></path>
+                                <path d="M4 5h16" class="jsx-71ebba0747e796c"></path>
+                            </svg>
+                        </span>
+                        <span class="jsx-71ebba0747e796c">Get Your Free ROI Assessment</span>
+                    </button>
+                    <a class="landing-floating-cta__link" href="/contact">
+                        <span aria-hidden="true" class="jsx-71ebba0747e796c landing-floating-cta__link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" class="jsx-71ebba0747e796c"></path>
+                                <path d="m22 6-10 7L2 6" class="jsx-71ebba0747e796c"></path>
+                            </svg>
+                        </span>
+                        <span class="jsx-71ebba0747e796c">Contact Us</span>
+                    </a>
+                </div>
+                <button type="button" aria-expanded="false" aria-label="Open quick actions" class="jsx-71ebba0747e796c landing-floating-cta__toggle">
+                    <span aria-hidden="true" class="jsx-71ebba0747e796c landing-floating-cta__toggle-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="jsx-71ebba0747e796c">
+                            <path d="M12 5v14" class="jsx-71ebba0747e796c"></path>
+                            <path d="M5 12h14" class="jsx-71ebba0747e796c"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <!--$-->
+            <!--/$-->
+        </div>
+        <script src="/_next/static/chunks/webpack-d282787ed3063711.js" id="_R_" async=""></script>
+        <script>
+            (self.__next_f = self.__next_f || []).push([0])
+        </script>
+        <script>
+            self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:I[36909,[\"8663\",\"static/chunks/8663-541166ed1e4fa846.js\",\"7177\",\"static/chunks/app/layout-a2b99551e4f9d531.js\"],\"Providers\"]\n3:I[9766,[],\"\"]\n4:I[98924,[],\"\"]\n5:I[41402,[\"8663\",\"static/chunks/8663-541166ed1e4fa846.js\",\"7177\",\"static/chunks/app/layout-a2b99551e4f9d531.js\"],\"\"]\n6:I[20858,[\"5592\",\"static/chunks/c15bf2b0-c59ed6c02f757fc5.js\",\"1904\",\"static/chunks/1904-e7d66b397e3a8dd4.js\",\"2619\",\"static/chunks/2619-04bc32f026a0d946.js\",\"9672\",\"static/chunks/9672-8c84df0168951b81.js\",\"8113\",\"static/chunks/8113-010b11de5ddfff56.js\",\"9211\",\"static/chunks/9211-020889b9ca4bc1c4.js\",\"6354\",\"static/chunks/6354-ea5e708193d78724.js\",\"8974\",\"static/chunks/app/page-ca73cedb376ebf06.js\"],\"Landing\"]\n7:I[24431,[],\"OutletBoundary\"]\n9:I[15278,[],\"AsyncMetadataOutlet\"]\nb:I[24431,[],\"ViewportBoundary\"]\nd:I[24431,[],\"MetadataBoundary\"]\ne:\"$Sreact.suspense\"\n10:I[57150,[],\"\"]\n:HL[\"/_next/static/css/a60279dcb9576183.css\",\"style\"]\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "0:{\"P\":null,\"b\":\"yhWDnFf5cdxAH-vRfaM8L\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/a60279dcb9576183.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"js\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"anonymous\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700\u0026display=swap\",\"rel\":\"stylesheet\"}],[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23ffffff' d='M32 10c-12.7 0-23 8.7-23 19.4v1.2h46v-1.2C55 18.7 44.7 10 32 10Zm-15 39.8c0 2.3 1.9 4.2 4.2 4.2h.4c2.3 0 4.2-1.9 4.2-4.2V34.6H17v15.2Zm21 0c0 2.3 1.9 4.2 4.2 4.2h.4c2.3 0 4.2-1.9 4.2-4.2V34.6H38v15.2Z'/%3E%3C/svg%3E\"}]]}],[\"$\",\"body\",null,{\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Organization\\\",\\\"name\\\":\\\"UmbrellaLabs\\\",\\\"url\\\":\\\"https://umbrellalabs.com\\\",\\\"email\\\":\\\"info@umbrellalabs.com\\\",\\\"description\\\":\\\"UmbrellaLabs helps organizations implement climate-positive AI automation with measurable ROI.\\\"}\"}}],[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"name\\\":\\\"UmbrellaLabs\\\",\\\"url\\\":\\\"https://umbrellalabs.com\\\",\\\"potentialAction\\\":{\\\"@type\\\":\\\"SearchAction\\\",\\\"target\\\":\\\"https://umbrellalabs.com/links\\\",\\\"query-input\\\":\\\"required name=search_term_string\\\"}}\"}}],[\"$\",\"$L2\",null,{\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"$L5\",null,{\"src\":\"/main.js\",\"strategy\":\"afterInteractive\"}]]}]]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L6\",null,{}],null,[\"$\",\"$L7\",null,{\"children\":[\"$L8\",[\"$\",\"$L9\",null,{\"promise\":\"$@a\"}]]}]]}],{},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}],null],[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$e\",null,{\"fallback\":null,\"children\":\"$Lf\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$10\",[]],\"s\":false,\"S\":true}\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n8:null\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "a:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Enterprise and SMB AI Automation Services\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Scale faster with enterprise and SMB AI automation services from UmbrellaLabs. Improve conversion efficiency, cut bottlenecks, and deliver measurable ROI.\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"AI automation services,enterprise AI automation services,SMB AI automation services,climate-positive AI,enterprise AI consulting,SMB automation consulting\"}],[\"$\",\"meta\",\"3\",{\"name\":\"robots\",\"content\":\"index, follow\"}],[\"$\",\"link\",\"4\",{\"rel\":\"canonical\",\"href\":\"https://umbrellalabs.com\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:title\",\"content\":\"Enterprise and SMB AI Automation Services\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:description\",\"content\":\"Scale faster with enterprise and SMB AI automation services from UmbrellaLabs. Improve conversion efficiency, cut bottlenecks, and deliver measurable ROI.\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:url\",\"content\":\"https://umbrellalabs.com\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"UmbrellaLabs\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image\",\"content\":\"https://umbrellalabs.com/og-default.svg\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:image:alt\",\"content\":\"UmbrellaLabs preview image\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"14\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:title\",\"content\":\"Enterprise and SMB AI Automation Services\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:description\",\"content\":\"Scale faster with enterprise and SMB AI automation services from UmbrellaLabs. Improve conversion efficiency, cut bottlenecks, and deliver measurable ROI.\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:image\",\"content\":\"https://umbrellalabs.com/og-default.svg\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "f:\"$a:metadata\"\n"])
+        </script>
+    </body>
+</html>
