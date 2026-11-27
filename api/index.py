@@ -1,13 +1,16 @@
-import google.generativeai as genai
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import os
-import json
-import logging
 import hashlib
-from datetime import datetime
+import hmac
+import logging
+import os
+from datetime import datetime, time, timedelta, timezone
+from functools import wraps
+
+import google.generativeai as genai
 import requests as http_requests
-from urllib.parse import quote
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from google.auth.transport import requests as google_requests
+from google.oauth2 import id_token as google_id_token
 
 # ===============================
 # CONFIGURATION
@@ -15,28 +18,40 @@ from urllib.parse import quote
 
 logging.basicConfig(level=logging.INFO)
 
-GEN_API_KEY = os.environ.get("GEN_API")
+
+def _require_env(name: str) -> str:
+    value = os.environ.get(name)
+    if not value:
+        raise RuntimeError(f"{name} environment variable not set")
+    return value
+
+
+GEN_API_KEY = _require_env("GEN_API")
 MODEL_NAME = "gemini-2.5-flash"
 
-if not GEN_API_KEY:
-    raise RuntimeError("GEN_API environment variable not set")
+# Supabase (secret key, server side only)
+SUPABASE_URL = _require_env("SUPABASE_URL").rstrip("/")
+SUPABASE_SERVICE_KEY = _require_env("SUPABASE_SERVICE_KEY")
 
-# ── Upstash Redis credentials ──────────────────────────────────
-UPSTASH_REDIS_REST_URL   = os.environ.get(
-    "UPSTASH_REDIS_REST_URL"
-)
-UPSTASH_REDIS_REST_TOKEN = os.environ.get(
-    "UPSTASH_REDIS_REST_TOKEN"
-)
+# Secret used to hash IP addresses so they cannot be reversed by brute force
+IP_HASH_SALT = _require_env("IP_HASH_SALT")
 
-REDIS_HEADERS = {
-    "Authorization": f"Bearer {UPSTASH_REDIS_REST_TOKEN}",
-    "Content-Type":  "application/json",
-}
+# Dashboard sign-in: Firebase project and the emails allowed to use admin routes
+FIREBASE_PROJECT_ID = os.environ.get("FIREBASE_PROJECT_ID", "umbrellalabs-faq")
+ADMIN_EMAILS = {e.strip().lower() for e in os.environ.get("ADMIN_EMAILS", "").split(",") if e.strip()}
 
-# How long (seconds) to keep a conversation in Redis before it expires.
-# 24 hours by default — change to suit your needs.
-CONVERSATION_TTL_SECONDS = 86_400
+# Sites allowed to call this API from a browser (the website and the dashboard)
+ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").split(",") if o.strip()]
+
+# How much recent history is sent to Gemini (the old Redis setup used a 24 hour expiry)
+CONTEXT_HOURS = int(os.environ.get("CONTEXT_HOURS", "24"))
+CONTEXT_MAX_MESSAGES = 40
+MAX_MESSAGE_CHARS = 4000
+
+if not ADMIN_EMAILS:
+    logging.warning("ADMIN_EMAILS is empty: every admin route will be refused")
+if not ALLOWED_ORIGINS:
+    logging.warning("ALLOWED_ORIGINS is empty: browsers will be blocked by CORS")
 
 genai.configure(api_key=GEN_API_KEY)
 
@@ -55,10 +70,10 @@ generation_config = {
 }
 
 safety_settings = [
-    {"category": "HARM_CATEGORY_HARASSMENT",        "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-    {"category": "HARM_CATEGORY_HATE_SPEECH",        "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",  "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT",  "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+    {"category": "HARM_CATEGORY_HARASSMENT",       "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+    {"category": "HARM_CATEGORY_HATE_SPEECH",      "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
 ]
 
 model = genai.GenerativeModel(
@@ -73,186 +88,144 @@ model = genai.GenerativeModel(
 
 app = Flask(__name__)
 
-CORS(app, resources={
-    r"/api/*": {
-        "origins": ["https://UmbrellaNET.github.io"]
-    }
-})
+CORS(app, resources={r"/api/*": {"origins": ALLOWED_ORIGINS}})
+
+# ===============================
+# SUPABASE HELPERS  (PostgREST over HTTPS)
+# ===============================
+
+
+def _sb(method: str, path: str, *, params=None, body=None, prefer: str | None = None):
+    """
+    Call Supabase's REST API. The secret key goes in the apikey header only:
+    sb_secret_ keys are not JWTs, so sending them as a bearer token fails.
+    """
+    headers = {"apikey": SUPABASE_SERVICE_KEY, "Content-Type": "application/json"}
+    if prefer:
+        headers["Prefer"] = prefer
+    resp = http_requests.request(
+        method,
+        f"{SUPABASE_URL}/rest/v1/{path}",
+        headers=headers,
+        params=params,
+        json=body,
+        timeout=8,
+    )
+    resp.raise_for_status()
+    return resp
+
+
+def db_load_context(ip_hash: str, session_id: str) -> list:
+    """Recent messages for one conversation, oldest first, starting with a user message."""
+    since = (datetime.now(timezone.utc) - timedelta(hours=CONTEXT_HOURS)).isoformat()
+    try:
+        resp = _sb("GET", "chat_messages", params={
+            "ip_hash": f"eq.{ip_hash}",
+            "session_id": f"eq.{session_id}",
+            "created_at": f"gte.{since}",
+            "select": "role,text:content",
+            "order": "id.desc",
+            "limit": str(CONTEXT_MAX_MESSAGES),
+        })
+        rows = list(reversed(resp.json()))
+    except Exception:
+        logging.exception("Could not load conversation history")
+        return []
+
+    # Gemini history must start with a user turn
+    while rows and rows[0]["role"] != "user":
+        rows.pop(0)
+    return rows
+
+
+def db_save_turn(ip_hash: str, session_id: str, user_text: str, model_text: str) -> bool:
+    """Append one user message and one model message."""
+    try:
+        _sb("POST", "chat_messages", prefer="return=minimal", body=[
+            {"ip_hash": ip_hash, "session_id": session_id, "role": "user",  "content": user_text},
+            {"ip_hash": ip_hash, "session_id": session_id, "role": "model", "content": model_text},
+        ])
+        return True
+    except Exception:
+        logging.exception("Could not save conversation turn")
+        return False
+
+
+def db_clear(ip_hash: str, session_id: str) -> None:
+    _sb("DELETE", "chat_messages", prefer="return=minimal", params={
+        "ip_hash": f"eq.{ip_hash}",
+        "session_id": f"eq.{session_id}",
+    })
+
 
 # ===============================
 # USER IDENTITY HELPERS
 # ===============================
 
+
 def get_client_ip() -> str:
-    """
-    Returns the real client IP, honouring common reverse-proxy headers.
-    Falls back to the direct socket address if no proxy header is present.
-    """
-    # Prefer X-Forwarded-For (first entry = real client when behind a proxy/CDN)
+    """Real client IP, honouring common reverse-proxy headers."""
     xff = request.headers.get("X-Forwarded-For", "")
     if xff:
         return xff.split(",")[0].strip()
-
-    # Fly.io / Railway / Render often use this header
     real_ip = request.headers.get("X-Real-IP", "")
     if real_ip:
         return real_ip.strip()
-
     return request.remote_addr or "unknown"
 
 
-def build_redis_key(ip: str, session_id: str) -> str:
-    """
-    Builds a namespaced Redis key that is unique per (IP, session).
-    The IP is hashed so raw addresses are never stored in Redis keys.
-    """
-    ip_hash = hashlib.sha256(ip.encode()).hexdigest()[:16]
-    # Use underscores — colons in URL-path endpoints caused silent failures
-    return f"umbrellanet_chat_{ip_hash}_{session_id}"
+def hash_ip(ip: str) -> str:
+    """Salted hash, so raw addresses are never stored and cannot be brute forced."""
+    return hmac.new(IP_HASH_SALT.encode(), ip.encode(), hashlib.sha256).hexdigest()[:16]
+
+
+def _clean(value, limit: int) -> str:
+    return str(value or "").strip()[:limit]
 
 
 # ===============================
-# REDIS HELPERS  (Upstash REST API)
+# ADMIN AUTHENTICATION  (Firebase ID token)
 # ===============================
 
-def _run_pipeline(commands: list) -> list | None:
-    """
-    Execute a list of Redis commands atomically via Upstash pipeline.
-    Keys and values are passed as JSON array elements — no URL encoding needed.
-
-    Returns the list of per-command results, or None on failure.
-    """
-    try:
-        resp = http_requests.post(
-            f"{UPSTASH_REDIS_REST_URL}/pipeline",
-            headers=REDIS_HEADERS,
-            json=commands,
-            timeout=5,
-        )
-        resp.raise_for_status()
-        results = resp.json()
-        logging.info(f"Pipeline results: {results}")
-
-        # Surface any per-command errors
-        for r in results:
-            if isinstance(r, dict) and "error" in r:
-                logging.error(f"Pipeline command error: {r['error']}")
-                return None
-
-        return results
-    except Exception as exc:
-        logging.error(f"Pipeline error: {exc}")
-        return None
+_google_request = google_requests.Request()
 
 
-def redis_rpush(key: str, *items) -> bool:
-    """
-    Append items to a Redis list and reset TTL — all via pipeline so
-    the key is always a JSON value, never a URL segment (no colon issues).
-    """
-    commands = [["RPUSH", key] + [json.dumps(item) for item in items],
-                ["EXPIRE", key, CONVERSATION_TTL_SECONDS]]
-    result = _run_pipeline(commands)
-    return result is not None
-
-
-def redis_lrange(key: str) -> list:
-    """
-    Fetch all items from a Redis list via pipeline.
-    Returns an empty list if the key doesn't exist or on error.
-    """
-    result = _run_pipeline([["LRANGE", key, 0, -1]])
-    if result is None:
-        return []
-
-    raw_list = result[0].get("result", [])
-    if not isinstance(raw_list, list):
-        logging.warning(f"LRANGE unexpected type: {type(raw_list)} — {raw_list}")
-        return []
-
-    turns = []
-    for item in raw_list:
+def require_admin(fn):
+    """Allow only signed-in dashboard users whose verified email is in ADMIN_EMAILS."""
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        header = request.headers.get("Authorization", "")
+        if not header.startswith("Bearer "):
+            return jsonify({"error": "Unauthorized"}), 401
         try:
-            turns.append(json.loads(item))
-        except (json.JSONDecodeError, TypeError) as e:
-            logging.warning(f"Skipping undecodable item: {item!r} ({e})")
-    return turns
+            claims = google_id_token.verify_firebase_token(
+                header[7:], _google_request, audience=FIREBASE_PROJECT_ID
+            )
+        except Exception:
+            return jsonify({"error": "Unauthorized"}), 401
+        if not claims:
+            return jsonify({"error": "Unauthorized"}), 401
+
+        email = (claims.get("email") or "").lower()
+        if not claims.get("email_verified") or email not in ADMIN_EMAILS:
+            return jsonify({"error": "Forbidden"}), 403
+        return fn(*args, **kwargs)
+    return wrapper
 
 
-def redis_del(key: str) -> bool:
-    """Delete a key via pipeline."""
-    result = _run_pipeline([["DEL", key]])
-    return result is not None
-
-
-# ===============================
-# CONVERSATION HELPERS
-# ===============================
-
-# In-memory cache of live chat sessions keyed by redis_key.
-_session_cache: dict = {}
-
-
-def _turns_to_gemini(turns: list) -> list:
-    """
-    Convert Redis-stored turns into Gemini SDK history format.
-    System prompt is prepended in memory — never stored in Redis.
-    """
-    bootstrap = [
-        {"role": "user",  "parts": [SYSTEM_PROMPT]},
-        {"role": "model", "parts": ["Understood. I will follow these instructions."]},
-    ]
-    real_turns = [{"role": t["role"], "parts": [t["text"]]} for t in turns]
-    return bootstrap + real_turns
-
-
-def get_conversation(redis_key: str):
-    """
-    Returns a live Gemini ChatSession for the given key.
-
-    Strategy:
-      1. Check the in-process cache (fast path — same Gunicorn worker).
-      2. Load ONLY real conversation turns from Redis (no system prompt).
-      3. Prepend the system prompt bootstrap in memory before handing to SDK.
-    """
-    # 1. In-process cache
-    if redis_key in _session_cache:
-        return _session_cache[redis_key]
-
-    # 2. Load real turns from Redis (empty list = brand-new user)
-    stored_turns = redis_lrange(redis_key)
-
-    # 3. Build Gemini history: system prompt in memory + real turns from Redis
-    gemini_history = _turns_to_gemini(stored_turns)
-
-    chat = model.start_chat(history=gemini_history)
-    _session_cache[redis_key] = chat
-    return chat
-
-
-def persist_turn(redis_key: str, user_text: str, model_text: str):
-    """
-    Atomically append exactly one user turn and one model turn to the
-    Redis list for this session. No read-modify-write — just RPUSH.
-    The system prompt is never written here.
-    """
-    redis_rpush(
-        redis_key,
-        {"role": "user",  "text": user_text},
-        {"role": "model", "text": model_text},
-    )
+def _db_failed(exc: Exception):
+    logging.error("Database error: %s", exc)
+    return jsonify({"error": "Database error", "status": "error"}), 502
 
 
 # ===============================
-# ROUTES
+# PUBLIC ROUTES
 # ===============================
+
 
 @app.route("/")
 def home():
-    return jsonify({
-        "status": "AI Agent API is running",
-        "model":  MODEL_NAME,
-    })
+    return jsonify({"status": "AI Agent API is running", "model": MODEL_NAME})
 
 
 @app.route("/api/chat", methods=["POST", "OPTIONS"])
@@ -261,94 +234,210 @@ def chat():
         return "", 200
 
     try:
-        data       = request.json or {}
-        message    = data.get("message", "").strip()
-        session_id = data.get("session_id", "default")
+        data = request.get_json(silent=True) or {}
+        message = _clean(data.get("message"), MAX_MESSAGE_CHARS + 1)
+        session_id = _clean(data.get("session_id", "default"), 100) or "default"
 
         if not message:
             return jsonify({"error": "Message is required"}), 400
+        if len(message) > MAX_MESSAGE_CHARS:
+            return jsonify({"error": f"Message is too long (max {MAX_MESSAGE_CHARS} characters)"}), 400
 
-        client_ip = get_client_ip()
-        redis_key = build_redis_key(client_ip, session_id)
+        ip_hash = hash_ip(get_client_ip())
+        logging.info("Chat request | ip=%s | session=%s", ip_hash, session_id)
 
-        logging.info(f"Chat request | key={redis_key} | session={session_id}")
+        # The system prompt is added in memory and never stored
+        history = [
+            {"role": "user",  "parts": [SYSTEM_PROMPT]},
+            {"role": "model", "parts": ["Understood. I will follow these instructions."]},
+        ] + [{"role": r["role"], "parts": [r["text"]]} for r in db_load_context(ip_hash, session_id)]
 
-        convo    = get_conversation(redis_key)
+        convo = model.start_chat(history=history)
         response = convo.send_message(message)
-        answer   = response.text if hasattr(response, "text") else str(response)
+        answer = response.text
 
-        # Persist to Redis immediately after a successful reply
-        persist_turn(redis_key, message, answer)
+        db_save_turn(ip_hash, session_id, message, answer)
 
-        # 🔍 HUMAN ESCALATION TOKEN
         needs_human = "unable_to_solve_query" in answer
-
-        # CLEAN RESPONSE
         clean_answer = answer.replace("unable_to_solve_query", "").strip()
 
         return jsonify({
-            "response":    clean_answer,
+            "response": clean_answer,
             "needs_human": needs_human,
-            "session_id":  session_id,
-            "status":      "success",
+            "session_id": session_id,
+            "status": "success",
         })
 
     except Exception as e:
-        logging.error(f"Chat error: {str(e)}")
-        return jsonify({
-            "error":  "Internal server error",
-            "status": "error",
-        }), 500
+        logging.error("Chat error: %s", e)
+        return jsonify({"error": "Internal server error", "status": "error"}), 500
 
 
 @app.route("/api/clear", methods=["POST"])
 def clear_history():
     try:
-        data       = request.json or {}
-        session_id = data.get("session_id", "default")
-        client_ip  = get_client_ip()
-        redis_key  = build_redis_key(client_ip, session_id)
-
-        # Remove from Redis
-        redis_del(redis_key)
-
-        # Remove from in-process cache so the next request starts fresh
-        _session_cache.pop(redis_key, None)
-
-        return jsonify({
-            "message": f"Conversation cleared for session {session_id}",
-            "status":  "success",
-        })
+        data = request.get_json(silent=True) or {}
+        session_id = _clean(data.get("session_id", "default"), 100) or "default"
+        db_clear(hash_ip(get_client_ip()), session_id)
+        return jsonify({"message": f"Conversation cleared for session {session_id}", "status": "success"})
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        logging.error("Clear error: %s", e)
+        return jsonify({"error": "Internal server error", "status": "error"}), 500
+
+
+@app.route("/api/missed-request", methods=["POST", "OPTIONS"])
+def missed_request():
+    """Called by the chat widget when nobody was online to take a human chat."""
+    if request.method == "OPTIONS":
+        return "", 200
+
+    data = request.get_json(silent=True) or {}
+    row = {
+        "session_id": _clean(data.get("session_id"), 100) or None,
+        "name":       _clean(data.get("name"), 200) or None,
+        "email":      _clean(data.get("email"), 200) or None,
+        "phone":      _clean(data.get("phone"), 50) or None,
+        "message":    _clean(data.get("message"), 2000) or None,
+    }
+    if not row["email"] and not row["phone"]:
+        return jsonify({"error": "An email or phone number is required"}), 400
+
+    try:
+        _sb("POST", "missed_requests", prefer="return=minimal", body=row)
+    except Exception as e:
+        return _db_failed(e)
+    return jsonify({"status": "success"})
 
 
 @app.route("/api/health", methods=["GET"])
 def health_check():
     try:
-        # Check Gemini
-        test_model = genai.GenerativeModel(MODEL_NAME)
-        test_model.generate_content("Health check")
+        _sb("GET", "chat_messages", params={"select": "id", "limit": "1"})
+        db_ok = True
+    except Exception:
+        db_ok = False
+    return jsonify({
+        "status": "healthy" if db_ok else "degraded",
+        "model": MODEL_NAME,
+        "database": "ok" if db_ok else "unreachable",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }), 200 if db_ok else 503
 
-        # Check Redis (simple ping via GET on a dummy key)
-        redis_ping = http_requests.get(
-            f"{UPSTASH_REDIS_REST_URL}/get/__ping__",
-            headers=REDIS_HEADERS,
-            timeout=3,
-        )
-        redis_ok = redis_ping.status_code == 200
 
-        return jsonify({
-            "status":     "healthy" if redis_ok else "degraded",
-            "model":      MODEL_NAME,
-            "redis":      "ok" if redis_ok else "unreachable",
-            "timestamp":  str(datetime.now()),
-        })
+# ===============================
+# ADMIN ROUTES  (dashboard)
+# ===============================
+
+
+@app.route("/api/admin/sessions", methods=["GET"])
+@require_admin
+def admin_sessions():
+    try:
+        rows = _sb("GET", "session_summaries", params={
+            "order": "last_at.desc",
+            "limit": "300",
+        }).json()
     except Exception as e:
-        return jsonify({
-            "status": "unhealthy",
-            "error":  str(e),
-        }), 500
+        return _db_failed(e)
+    return jsonify({"sessions": rows})
+
+
+@app.route("/api/admin/messages", methods=["GET"])
+@require_admin
+def admin_messages():
+    ip_hash = _clean(request.args.get("ip_hash"), 64)
+    session_id = _clean(request.args.get("session_id"), 100)
+    if not ip_hash or not session_id:
+        return jsonify({"error": "ip_hash and session_id are required"}), 400
+    try:
+        rows = _sb("GET", "chat_messages", params={
+            "ip_hash": f"eq.{ip_hash}",
+            "session_id": f"eq.{session_id}",
+            "select": "role,text:content,created_at",
+            "order": "id.asc",
+            "limit": "1000",
+        }).json()
+    except Exception as e:
+        return _db_failed(e)
+    return jsonify({"messages": rows})
+
+
+@app.route("/api/admin/analytics", methods=["GET"])
+@require_admin
+def admin_analytics():
+    today = datetime.now(timezone.utc).date()
+    try:
+        start_day = datetime.strptime(request.args["start"], "%Y-%m-%d").date() if "start" in request.args \
+            else today - timedelta(days=182)
+        end_day = datetime.strptime(request.args["end"], "%Y-%m-%d").date() if "end" in request.args else today
+    except ValueError:
+        return jsonify({"error": "Dates must look like 2026-11-27"}), 400
+
+    p_start = datetime.combine(start_day, time.min, tzinfo=timezone.utc).isoformat()
+    p_end = datetime.combine(end_day, time.max, tzinfo=timezone.utc).isoformat()
+
+    try:
+        s = _sb("POST", "rpc/analytics_summary", body={"p_start": p_start, "p_end": p_end}).json()
+    except Exception as e:
+        return _db_failed(e)
+
+    s["avg_messages"] = round(s["total_messages"] / s["total_sessions"], 1) if s["total_sessions"] else 0
+    s["retention"] = round(100 * s["returning_users"] / s["total_users"]) if s["total_users"] else 0
+    s["response_rate"] = round(100 * s["bot_messages"] / s["user_messages"]) if s["user_messages"] else 0
+    return jsonify(s)
+
+
+@app.route("/api/admin/missed", methods=["GET"])
+@require_admin
+def admin_missed():
+    try:
+        rows = _sb("GET", "missed_requests", params={
+            "order": "created_at.desc",
+            "limit": "300",
+        }).json()
+    except Exception as e:
+        return _db_failed(e)
+    return jsonify({"requests": rows, "unseen": sum(1 for r in rows if not r.get("seen_at"))})
+
+
+@app.route("/api/admin/missed/count", methods=["GET"])
+@require_admin
+def admin_missed_count():
+    try:
+        resp = _sb("GET", "missed_requests", prefer="count=exact", params={
+            "seen_at": "is.null",
+            "select": "id",
+            "limit": "1",
+        })
+        # Content-Range looks like "0-0/5" or "*/0"
+        unseen = int(resp.headers.get("Content-Range", "*/0").split("/")[-1])
+    except Exception as e:
+        return _db_failed(e)
+    return jsonify({"unseen": unseen})
+
+
+@app.route("/api/admin/missed/<int:missed_id>/seen", methods=["POST"])
+@require_admin
+def admin_missed_seen(missed_id: int):
+    try:
+        _sb("PATCH", "missed_requests", prefer="return=minimal",
+            params={"id": f"eq.{missed_id}"},
+            body={"seen_at": datetime.now(timezone.utc).isoformat()})
+    except Exception as e:
+        return _db_failed(e)
+    return jsonify({"status": "success"})
+
+
+@app.route("/api/admin/missed/seen-all", methods=["POST"])
+@require_admin
+def admin_missed_seen_all():
+    try:
+        _sb("PATCH", "missed_requests", prefer="return=minimal",
+            params={"seen_at": "is.null"},
+            body={"seen_at": datetime.now(timezone.utc).isoformat()})
+    except Exception as e:
+        return _db_failed(e)
+    return jsonify({"status": "success"})
 
 
 # ===============================
@@ -356,4 +445,4 @@ def health_check():
 # ===============================
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(debug=os.environ.get("FLASK_DEBUG") == "1", port=8000)
